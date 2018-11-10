@@ -2,11 +2,59 @@ import React, { Component}  from 'react';
 import './play.css'
 import $ from 'jquery';
 import firebase from './firebase';
+import Chance from 'chance';
 
 class Play extends Component {
 
     state = {
-        chat : ""
+        chat : "",
+        roll : "d0",
+        rollResult: ""
+    }
+
+    diceRoller = event => {
+
+      let chance = new Chance();
+    
+      let rollresult = 0;
+
+      let rollType = $(event.target).attr('data');
+      this.setState({
+        roll: rollType
+      });
+
+      switch (rollType) {
+        case "d4":
+        rollresult = chance.d4()
+        break;
+        case "d6":
+        rollresult = chance.d6()
+        break;
+        case "d8":
+        rollresult = chance.d8()
+        break;
+        case "d10":
+        rollresult = chance.d10()
+        break;
+        case "d12":
+        rollresult = chance.d12()
+        break;
+        case "d20":
+        rollresult = chance.d20()
+        break;
+        default:
+        rollresult = 0;
+      }
+
+
+      console.log(rollresult)
+
+      this.setState({
+        rollResult : rollresult
+      })
+
+
+    
     }
 
     handleInputChange = event => {
@@ -76,17 +124,22 @@ class Play extends Component {
 render( ) {
     return(
         <div className="app playfield container-flex">
+      
                     <div className="row boardrow">
                     <div className='col-1'></div>
-                    <div className='col-5 board'></div>
+                    <div className='col-5 '>
+
+                    </div>
+                    <div className='col-1'></div>
                     <div className='col-1'></div>
                     <div className='col-4 videodiv'></div>                                
-                    <div className='col-1'></div>
+                    
                     </div>
 
                     <div className='row chatdicediv'>
-                    <div className='col-1'></div>
-                    <div className='col-5 chat' id="chat">
+                    
+                    <div className='col-3'>
+                    <div className='chat' id='chat'>
         <div id="chat-messages"></div>
         <div id="chat-bar">
           <input id="chat-input"
@@ -98,12 +151,26 @@ render( ) {
         required="required" />
           <button id="chat-send" onClick={(e) => this.clickHandler(e)}>Send</button>
         </div>
+        </div>
                     </div>
-                    
-                    <div className='col-5 dice'>
+                    <div className='col-3'></div>
+                    <div className='col-1'></div>
+                    <div className='col-5'>
+                    <div className='dice'>
+                    <div className='dicebuttons'>
+                    <button type="button" data="d4" className="btn rollbtn btn-primary" onClick={(e) => this.diceRoller(e)}>D4</button>
+                            <button type="button" data="d6" className="btn rollbtn btn-secondary" onClick={(e) => this.diceRoller(e)}>D6</button>
+                            <button type="button" data="d8" className="btn rollbtn btn-success" onClick={(e) => this.diceRoller(e)}>D8</button>
+                            <button type="button" data="d10" className="btn rollbtn btn-danger" onClick={(e) => this.diceRoller(e)}>D10</button>
+                            <button type="button" data="d12" className="btn rollbtn btn-warning" onClick={(e) => this.diceRoller(e)}>D12</button>
+                            <button type="button" data="d20" className="btn rollbtn btn-info" onClick={(e) => this.diceRoller(e)}>D20</button></div>
+                    <span className='diceresults' style={{backgroundImage : `url(./resources/${this.state.roll}.png)` }}>
+                    <center><p>{this.state.rollResult}</p></center>
+                    </span>
+                    </div>
                     </div>                
                     
-                    <div className='col-1'></div>
+                
                     </div>
 
 

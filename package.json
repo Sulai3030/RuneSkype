@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "RuneSkype",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "Nerd Video Chat",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -12,7 +12,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "Jano Roze, Tamara Hartman, Sulai Sivadel",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
