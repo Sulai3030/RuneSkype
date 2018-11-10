@@ -45,7 +45,7 @@ class Home extends Component {
          open/close primary navigation
          -------------------------------- */
     
-        $('.cd-primary-nav li a').smoothScroll();
+        // $('.cd-primary-nav li a').smoothScroll();
     
     
         $('.cd-primary-nav-trigger').on('click', function () {
