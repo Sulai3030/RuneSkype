@@ -1,7 +1,6 @@
 import React, { Component}  from 'react';
 import './play.css'
 import $ from 'jquery';
-import firebase from './firebase';
 import Chance from 'chance';
 import DMvideo from './components/DMvideo'
 
@@ -75,46 +74,46 @@ class Play extends Component {
     }
 
     clickHandler = (e) => {
-        let database = firebase.database();
-        let chatData = database.ref("/chat");
-        if ($("#chat-input").val() !== "") {
+        // let database = firebase.database();
+        // let chatData = database.ref("/chat");
+        // if ($("#chat-input").val() !== "") {
 
-            let message = $("#chat-input").val();
+        //     let message = $("#chat-input").val();
         
-            chatData.push({
-              message: message,
-              time: firebase.database.ServerValue.TIMESTAMP,
-            });
+        //     chatData.push({
+        //       message: message,
+        //       time: firebase.database.ServerValue.TIMESTAMP,
+        //     });
         
             $("#chat-input").val("");
-          }
+          // }
     }
 
 
     componentDidMount() {
     
-        let database = firebase.database();
-        let chatData = database.ref("/chat");
+        // let database = firebase.database();
+        // let chatData = database.ref("/chat");
         
 
 
 
-          chatData.orderByChild("time").on("child_added", function(snapshot) {
+          // chatData.orderByChild("time").on("child_added", function(snapshot) {
 
-            // If idNum is 0, then its a disconnect message and displays accordingly
-            // If not - its a user chat message
-            if (snapshot.val().idNum === 0) {
-              $("#chat-messages").append("<p class=player" + snapshot.val().idNum + "><span>"
-              + snapshot.val().name + "</span>: " + snapshot.val().message + "</p>");
-            }
-            else {
-              $("#chat-messages").append("<p class=player" + snapshot.val().idNum + "><span>"
-              + snapshot.val().name + "</span>: " + snapshot.val().message + "</p>");
-            }
+          //   // If idNum is 0, then its a disconnect message and displays accordingly
+          //   // If not - its a user chat message
+          //   if (snapshot.val().idNum === 0) {
+          //     $("#chat-messages").append("<p class=player" + snapshot.val().idNum + "><span>"
+          //     + snapshot.val().name + "</span>: " + snapshot.val().message + "</p>");
+          //   }
+          //   else {
+          //     $("#chat-messages").append("<p class=player" + snapshot.val().idNum + "><span>"
+          //     + snapshot.val().name + "</span>: " + snapshot.val().message + "</p>");
+          //   }
           
-            // Keeps div scrolled to bottom on each update.
-            $("#chat-messages").scrollTop($("#chat-messages")[0].scrollHeight);
-          });
+          //   // Keeps div scrolled to bottom on each update.
+          //   $("#chat-messages").scrollTop($("#chat-messages")[0].scrollHeight);
+          // });
 
 
 
