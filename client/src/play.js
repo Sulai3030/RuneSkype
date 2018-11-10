@@ -3,6 +3,7 @@ import './play.css'
 import $ from 'jquery';
 import firebase from './firebase';
 import Chance from 'chance';
+import DMvideo from './components/DMvideo'
 
 class Play extends Component {
 
@@ -132,8 +133,13 @@ render( ) {
                     </div>
                     <div className='col-1'></div>
                     <div className='col-1'></div>
-                    <div className='col-4 videodiv'></div>                                
-                    
+                    <div className='col-4'>
+                    <div className = 'videodiv'>
+                    <DMvideo className='dmvideo'
+                          playsInline
+                          ></DMvideo>
+                    </div>
+                    </div>                  
                     </div>
 
                     <div className='row chatdicediv'>

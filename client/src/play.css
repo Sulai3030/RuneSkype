@@ -28,6 +28,8 @@ body {
 
 .videodiv {
     background-color:rgba(0, 0, 255, 0.801);
+    width: 100%;
+    height: 100%;
 }
 
 .chat {
@@ -127,4 +129,10 @@ canvas {
     background-position: center;
     background-size: 200%;
     z-index: -5;
+}
+
+.video-react.video-react-fluid, .video-react.video-react-16-9, .video-react.video-react-4-3 {
+    width: 450px;
+    height: 300px;
+    padding: 0 !important;
 }
