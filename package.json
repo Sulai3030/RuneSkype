@@ -1,5 +1,5 @@
 {
-  "name": "RuneSkype",
+  "name": "runeskype",
   "version": "1.0.0",
   "description": "Nerd Video Chat",
   "main": "server.js",
