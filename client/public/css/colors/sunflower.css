@@ -1,0 +1,118 @@
+/*
+#f1c40f - Sun Flower
+#f39c12 - Orange
+*/
+
+a, .our-pricing-plan .pricing-body .price-plan .btn-professional, .input__label-content--chisato::after, .social-account-inner li a:hover {
+    color: #f1c40f;
+}
+
+.cd-primary-nav {
+    background: rgba(241, 196, 15, 0.95);
+}
+
+.overlay {
+    background: rgba(241, 196, 15, 0.2);
+}
+
+.loader span,  .invite-form button, .our-pricing-plan .pricing-body .price-plan .btn-business, .contact-us-area .btn-send, .form-area  {
+    background-color: #f1c40f !important;
+}
+
+.btn-color, .btn.green, .btns a.btn-appstore, .btns a.btn-googleplay, .faq-icon, .scrollup {
+    background-color: #f1c40f;
+    color: #fff;
+}
+
+.carousel-indicators .active, .features-section, .features-section-agency, .testimonial-area, .login .modal-header, .register .modal-header {
+    background: #f1c40f;
+}
+
+li.active span.round-tabs.one, li.active span.round-tabs.two, li.active span.round-tabs.three, li.active span.round-tabs.four, li.active span.round-tabs.five {
+    background: #f1c40f !important;
+    border: 2px solid #f1c40f;
+}
+
+.our-pricing-plan .pricing-body .price-plan:hover, .our-pricing-plan .pricing-body .price-plan-active {
+    border: 2px solid #f1c40f;
+}
+
+
+.our-pricing-plan .pricing-body .price-plan-active {
+    border: 2px solid #f1c40f;
+    background: #f1c40f;
+}
+
+
+.input__field--chisato:focus,
+.input--filled .input__field--chisato {
+    border-color: #f1c40f;
+}
+
+
+
+/* Second color */
+
+.no-touch .cd-primary-nav a:hover {
+    background-color: #f39c12;
+}
+
+.btns a.btn-appstore:hover, .btns a.btn-googleplay:hover {
+    background: #f39c12;
+}
+
+@-webkit-keyframes loaderBlock {
+    0%, 30% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    55% {
+        background-color: #f39c12;
+    }
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes loaderBlock {
+    0%, 30% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    55% {
+        background-color: #f39c12;
+    }
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@-webkit-keyframes loaderBlockInverse {
+    0%, 20% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    55% {
+        background-color: #f39c12;
+    }
+    100% {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes loaderBlockInverse {
+    0%, 20% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    55% {
+        background-color: #f39c12;
+    }
+    100% {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+}
