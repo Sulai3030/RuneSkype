@@ -1,9 +1,12 @@
 {
-  "name": "mern",
-  "version": "0.1.0",
+  "name": "RuneSkype",
+  "version": "1.1.0",
   "description": "Mern Demo",
   "private": true,
   "proxy": "http://localhost:3001/",
+  "engines": {
+    "node" : "8.11.2"
+   },
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import $ from 'jquery';
 import "./App.css";
-import 'jquery-smooth-scroll';
 
 class Home extends Component {
 
