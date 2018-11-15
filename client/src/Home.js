@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import $ from 'jquery';
 import "./App.css";
 
+
 class Home extends Component {
 
     componentDidMount() {

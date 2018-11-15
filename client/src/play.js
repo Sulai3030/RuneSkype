@@ -158,8 +158,12 @@ render( ) {
         </div>
         </div>
                     </div>
-                    <div className='col-3'></div>
-                    <div className='col-1'></div>
+                    <div className='col-4'>
+                    <div className='characterinfo'>
+                    
+                    
+                    </div>
+                    </div>
                     <div className='col-5'>
                     <div className='dice'>
                     <div className='dicebuttons'>

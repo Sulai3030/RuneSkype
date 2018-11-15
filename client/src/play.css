@@ -2,7 +2,8 @@ body {
     overflow:hidden;
     background-image: url("/resources/hex.gif");
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .boardrow {
@@ -23,7 +24,7 @@ body {
 }
 
 .chatdicediv {
-    height:30vh;
+    height:40vh;
 }
 
 .videodiv {
@@ -135,4 +136,12 @@ canvas {
     width: 450px;
     height: 300px;
     padding: 0 !important;
+}
+
+.characterinfo {
+    width: 100%;
+    height: 100%;
+    background-image: url('/resources/characterinfo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
