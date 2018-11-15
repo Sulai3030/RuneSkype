@@ -1,19 +1,12 @@
 {
-  "name": "runeskype",
-  "version": "1.1.0",
-  "description": "runeskype videochat",
+  "name": "mern",
+  "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
-  "engines": {
-    "node": "8.11.2",
-    "npm": "6.4.1"
-  },
   "dependencies": {
-    "firebase": "^5.5.8",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14",
-    "video-react": "^0.13.1"
+    "react-scripts": "1.0.14"
   },
   "scripts": {
     "start": "react-scripts start",
