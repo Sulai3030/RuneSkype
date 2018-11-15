@@ -1,0 +1,118 @@
+/*
+#3498db - Peter River
+#2980b9 - Belize hole
+*/
+
+a, .our-pricing-plan .pricing-body .price-plan .btn-professional, .input__label-content--chisato::after, .social-account-inner li a:hover {
+    color: #3498db;
+}
+
+.cd-primary-nav {
+    background: rgba(52, 152, 219, 0.95);
+}
+
+.overlay {
+    background: rgba(52, 152, 219, 0.2);
+}
+
+.loader span,  .invite-form button, .our-pricing-plan .pricing-body .price-plan .btn-business, .contact-us-area .btn-send, .form-area  {
+    background-color: #3498db !important;
+}
+
+.btn-color, .btn.green, .btns a.btn-appstore, .btns a.btn-googleplay, .faq-icon, .scrollup {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.carousel-indicators .active, .features-section, .features-section-agency, .testimonial-area, .login .modal-header, .register .modal-header {
+    background: #3498db;
+}
+
+li.active span.round-tabs.one, li.active span.round-tabs.two, li.active span.round-tabs.three, li.active span.round-tabs.four, li.active span.round-tabs.five {
+    background: #3498db !important;
+    border: 2px solid #3498db;
+}
+
+.our-pricing-plan .pricing-body .price-plan:hover, .our-pricing-plan .pricing-body .price-plan-active {
+    border: 2px solid #3498db;
+}
+
+
+.our-pricing-plan .pricing-body .price-plan-active {
+    border: 2px solid #3498db;
+    background: #3498db;
+}
+
+
+.input__field--chisato:focus,
+.input--filled .input__field--chisato {
+    border-color: #3498db;
+}
+
+
+
+/* Second color */
+
+.no-touch .cd-primary-nav a:hover {
+    background-color: #2980b9;
+}
+
+.btns a.btn-appstore:hover, .btns a.btn-googleplay:hover {
+    background: #2980b9;
+}
+
+@-webkit-keyframes loaderBlock {
+    0%, 30% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    55% {
+        background-color: #2980b9;
+    }
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes loaderBlock {
+    0%, 30% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    55% {
+        background-color: #2980b9;
+    }
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@-webkit-keyframes loaderBlockInverse {
+    0%, 20% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    55% {
+        background-color: #2980b9;
+    }
+    100% {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes loaderBlockInverse {
+    0%, 20% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    55% {
+        background-color: #2980b9;
+    }
+    100% {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+}
