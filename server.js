@@ -2,6 +2,11 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const ch = require('chance');
+const Chance = new ch();
+const AcessToken = require('twilio').jwt.AccessToken;
+const VideoGrant = AccessToken.VideoGrant;
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -12,6 +17,17 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+
+
+app.get('/token', function(request, response) {
+  
+
+
+
+
+})
+
+
 
 // Send every other request to the React app
 // Define any API routes before this runs

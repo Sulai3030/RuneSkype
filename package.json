@@ -25,6 +25,7 @@
     "if-env": "^1.0.4",
     "jquery": "^3.3.1",
     "react-router-dom": "^4.3.1",
+    "twilio": "^3.24.0",
     "video-react": "^0.13.1"
   }
 }
