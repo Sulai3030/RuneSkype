@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const ch = require('chance');
 const Chance = new ch();
-const AcessToken = require('twilio').jwt.AccessToken;
+const AccessToken = require('twilio').jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
 
 
@@ -20,7 +20,28 @@ if (process.env.NODE_ENV === "production") {
 
 
 app.get('/token', function(request, response) {
-  
+  const identity = Chance.name();
+
+  let token = new AccessToke(
+
+    proccess.env.TWILIO_ACCOUNT_SID,
+    process.env.TWILIO_API_KEY,
+    process.env.TWILIO_API_SECRET
+
+
+  );
+
+  token.identity = identity;
+
+  const grant = new VideoGrant();
+
+  token.addGrant(grant);
+
+
+  response.send({
+    identity:identity,
+    token: token.toJwt()
+  });
 
 
 
