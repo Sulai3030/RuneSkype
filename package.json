@@ -4,17 +4,17 @@
   "description": "rune video chat",
   "engines": {
     "node": "8.11.2",
-    "yarn": "^1.10.1"
+    "npm": "6.4.1"
   },
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"yarn run client\"",
-    "client": "cd client && yarn start",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
     "install": "cd client && yarn install",
-    "build": "cd client && yarn build",
-    "heroku-postbuild": "yarn run build"
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -41,5 +41,13 @@
     "webpack": "^4.26.0",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jroze88/RuneSkype.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jroze88/RuneSkype/issues"
+  },
+  "homepage": "https://github.com/Jroze88/RuneSkype#readme"
 }
