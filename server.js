@@ -27,7 +27,10 @@ if(process.env.NODE_ENV === "dev") { // Configuration for development environmen
 
 // }
 
+if (process.env.NODE_ENV === "production" || "prod") {
+  app.use(express.static("client/build"));
 
+}
 
 
 // Define API routes here
