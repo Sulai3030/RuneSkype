@@ -2,7 +2,7 @@ import React, { Component}  from 'react';
 import './play.css'
 import $ from 'jquery';
 import Chance from 'chance';
-import DMvideo from './components/DMvideo'
+import VideoComponent from './VideoComponent'
 
 class Play extends Component {
 
@@ -134,9 +134,7 @@ render( ) {
                     <div className='col-1'></div>
                     <div className='col-4'>
                     <div className = 'videodiv'>
-                    <DMvideo className='dmvideo'
-                          playsInline
-                          ></DMvideo>
+                    <VideoComponent />
                     </div>
                     </div>                  
                     </div>
