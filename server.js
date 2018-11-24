@@ -12,13 +12,13 @@ app.get('env')
 
 
 
-if(process.env.NODE_ENV === "dev") { // Configuration for development environment
+if(process.env.NODE_ENV === "development") { // Configuration for development environment
     var webpackDevMiddleware = require("webpack-dev-middleware");
     var webpackConfig = require("./webpack.config.js");
     const webpackCompiler = webpack(webpackConfig);
     app.use(webpackDevMiddleware(webpackCompiler));
     app.use(express.static(path.join(__dirname, "app")));
-} else if(process.env.NODE_ENV === "prod") { // Configuration for production environment
+} else if(process.env.NODE_ENV === "production") { // Configuration for production environment
     app.use(express.static(path.join(__dirname, "dist")));
 }
 
