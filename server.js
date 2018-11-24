@@ -32,6 +32,11 @@ if (process.env.NODE_ENV === "production" || "prod") {
 
 }
 
+let apiKey = process.env.API_KEY
+let sid = process.env.API_SID
+let secret = process.env.API_SECRET
+
+
 
 // Define API routes here
 
@@ -41,9 +46,9 @@ app.get('/token', function(req, res) {
 
   let token = new AccessToken(
 
-    proccess.env.sid,
-    proccess.env.apiKey,
-    proccess.env.apiSecret
+    sid,
+    apiKey,
+    secret
 
 
   );
