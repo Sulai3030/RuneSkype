@@ -144,3 +144,8 @@ canvas {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.videopane {
+    width: 100px;
+    height: 100px;
+}

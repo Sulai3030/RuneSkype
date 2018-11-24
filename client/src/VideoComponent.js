@@ -156,7 +156,7 @@ export default class VideoComponent extends Component {
 	render() {
 		// Only show video track after user has joined a room
 		let showLocalTrack = this.state.localMediaAvailable ? (
-			<div className="flex-item">
+			<div className="flex-item videopane">
 				<div ref="localMedia" />
 			</div>
 		) : (
