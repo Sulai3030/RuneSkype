@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import Video from 'twilio-video';
-import axios from 'axios';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
+import { Card,  CardText } from 'material-ui/Card';
+import API from './utils/API'
 
 export default class VideoComponent extends Component {
 	constructor(props) {
 		super();
 		this.state = {
-			identity: null,
+      identity: null,
+      token: '',
 			roomName: '',
 			roomNameErr: false, // Track error for room name TextField
 			previewTracks: null,
@@ -133,13 +134,15 @@ export default class VideoComponent extends Component {
 			}
 			this.detachParticipantTracks(room.localParticipant);
 			room.participants.forEach(this.detachParticipantTracks);
-			this.state.activeRoom = null;
+			this.setState({activeRoom: null});
 			this.setState({ hasJoinedRoom: false, localMediaAvailable: false });
 		});
 	}
 
 	componentDidMount() {
-		axios.get('/token').then(results => {
+		API.tokenGet().then(results => {
+      console.log(results.data);
+      console.log(results.data.token)
 			const { identity, token } = results.data;
 			this.setState({ identity, token });
 		});

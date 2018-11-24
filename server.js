@@ -1,38 +1,46 @@
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const ch = require('chance');
-const Chance = new ch();
-const AccessToken = require('twilio').jwt.AccessToken;
+const faker = require("faker");
+const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
 
 
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+app.get('env')
 
+
+
+if(process.env.NODE_ENV === "DEV") { // Configuration for development environment
+    var webpackDevMiddleware = require("webpack-dev-middleware");
+    var webpackConfig = require("./webpack.config.js");
+    const webpackCompiler = webpack(webpackConfig);
+    app.use(webpackDevMiddleware(webpackCompiler));
+    app.use(express.static(path.join(__dirname, "app")));
+} else if(process.env.NODE_ENV === "PROD") { // Configuration for production environment
+    app.use(express.static(path.join(__dirname, "dist")));
 }
+
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+
+// }
+
+
+
 
 // Define API routes here
 
-app.get('/api/greeting', (req, res) => {
-  const name = req.query.name || 'World';
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({ greeting: `Hello ${name}!` }));
-});
 
-app.get('/token', function(request, response) {
-  const identity = Chance.name();
+app.get('/token', function(req, res) {
+  var identity = faker.name.findName();
 
-  let token = new AccessToke(
+  let token = new AccessToken(
 
-    proccess.env.TWILIO_ACCOUNT_SID,
-    process.env.TWILIO_API_KEY,
-    process.env.TWILIO_API_SECRET
+    proccess.env.sid,
+    proccess.env.apiKey,
+    proccess.env.apiSecret
 
 
   );
@@ -43,8 +51,11 @@ app.get('/token', function(request, response) {
 
   token.addGrant(grant);
 
+  console.log(token)
+  console.log(token.toJwt())
 
-  response.send({
+
+  res.send({
     identity:identity,
     token: token.toJwt()
   });
