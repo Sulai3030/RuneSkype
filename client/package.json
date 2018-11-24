@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "portfolio",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "https://localhost:3001/",
   "engines": {
     "node": "8.11.2"
   },

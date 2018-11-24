@@ -97,7 +97,7 @@ class Home extends Component {
         //     url: '//fifothemes.us11.list-manage.com/subscribe/post?u=3b20d04261686076af5d7eb47&amp;id=b1e189e232',
         //     fields: { mc_email: "Email"},
         //     callback: clearSubsForm
-        //     //http://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
+        //     //https://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
         // });
     
     
@@ -108,7 +108,7 @@ class Home extends Component {
         //     url: '//fifothemes.us11.list-manage.com/subscribe/post?u=3b20d04261686076af5d7eb47&amp;id=74f3ddd5e8',
         //     fields: {mc_name: "Name", mc_email: "Email", mc_message: "Message"},
         //     callback: clearLeadSubsForm
-        //     //http://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
+        //     //https://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
         // });
     
     

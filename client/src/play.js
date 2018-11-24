@@ -3,6 +3,10 @@ import './play.css'
 import $ from 'jquery';
 import Chance from 'chance';
 import VideoComponent from './VideoComponent'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import './videoteststyle.css';
 
 class Play extends Component {
 
@@ -133,9 +137,11 @@ render( ) {
                     <div className='col-1'></div>
                     <div className='col-1'></div>
                     <div className='col-4'>
-                    <div className = 'videodiv'>
-                    <VideoComponent />
-                    </div>
+                    <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+        <div>
+            <VideoComponent />
+        </div>
+    </MuiThemeProvider>
                     </div>                  
                     </div>
 
