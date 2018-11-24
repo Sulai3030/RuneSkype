@@ -1,6 +1,7 @@
 {
   "name": "runeskype",
   "version": "0.1.0",
+  "description": "portfolio",
   "private": true,
   "proxy": "http://localhost:3001/",
   "engines": {
