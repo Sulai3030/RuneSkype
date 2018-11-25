@@ -57,5 +57,10 @@ body {
 }
 
 .video-container {
+    display: inline;
+}
 
+.remoteMedia {
+    display: inline;
+    padding: 0;
 }

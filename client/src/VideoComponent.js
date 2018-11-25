@@ -169,9 +169,9 @@ export default class VideoComponent extends Component {
 		);
 		return (
 
-					<div className="container video-container">
+					<span className="container video-container">
 						{showLocalTrack}
-						<div className="flex-item">
+						<span className="flex-item">
 							<input
 								type = 'text'
 								placeholder="Room Name"
@@ -180,9 +180,9 @@ export default class VideoComponent extends Component {
 							/>
 							<br />
 							{joinOrLeaveRoomButton}
-						</div>
-						<div className="flex-item" ref="remoteMedia" id="remote-media" />
-					</div>
+						</span>
+						<span className="flex-item remoteMedia" ref="remoteMedia" id="remote-media" />
+					</span>
 
 		);
 	}
