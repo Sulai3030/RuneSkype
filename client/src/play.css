@@ -55,3 +55,8 @@ body {
     height: 38px !important;
     font-size: 0.8 em;
 }
+
+.video-container {
+    height: 120px !important;
+    width: 200px !important;
+}

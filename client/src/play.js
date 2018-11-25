@@ -405,8 +405,8 @@ render( ) {
                           Success Panel
                       </div>
                       <div className="panel-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                      </div>
+                      <VideoComponent />
+                          </div>
 
                   </div>
               </div>
