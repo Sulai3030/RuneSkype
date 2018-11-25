@@ -56,11 +56,9 @@ body {
     font-size: 0.8 em;
 }
 
-.video-container {
+.video-pane {
     display: inline;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.remoteMedia {
-    display: inline;
-    padding: 0;
-}

@@ -181,7 +181,7 @@ export default class VideoComponent extends Component {
 							<br />
 							{joinOrLeaveRoomButton}
 						</span>
-						<span className="flex-item remoteMedia" ref="remoteMedia" id="remote-media" />
+						<span className="item videopane" ref="remoteMedia" id="remote-media" />
 					</span>
 
 		);
