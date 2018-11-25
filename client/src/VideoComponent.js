@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import Video from 'twilio-video';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-import { Card,  CardText } from 'material-ui/Card';
 import API from './utils/API'
 
 export default class VideoComponent extends Component {
@@ -164,18 +161,18 @@ export default class VideoComponent extends Component {
 		);
 		// Hide 'Join Room' button if user has already joined a room.
 		let joinOrLeaveRoomButton = this.state.hasJoinedRoom ? (
-			<RaisedButton label="Leave Room" secondary={true} onClick={this.leaveRoom} />
+			<button className='btn btn-danger' label="Leave Room" secondary={true} onClick={this.leaveRoom}>Leave Room</button>
 		) : (
-			<RaisedButton label="Join Room" primary={true} onClick={this.joinRoom} />
+			<button className='btn btn-danger' label="Join Room" primary={true} onClick={this.joinRoom}>Join Room</button>
 		);
 		return (
-			<Card>
-				<CardText>
+
 					<div className="container video-container">
 						{showLocalTrack}
 						<div className="flex-item">
-							<TextField
-								hintText="Room Name"
+							<input
+								type = 'text'
+								placeholder="Room Name"
 								onChange={this.handleRoomNameChange}
 								errorText={this.state.roomNameErr ? 'Room Name is required' : undefined}
 							/>
@@ -184,8 +181,7 @@ export default class VideoComponent extends Component {
 						</div>
 						<div className="flex-item" ref="remoteMedia" id="remote-media" />
 					</div>
-				</CardText>
-			</Card>
+
 		);
 	}
 }
