@@ -163,26 +163,36 @@ export default class VideoComponent extends Component {
 		);
 		// Hide 'Join Room' button if user has already joined a room.
 		let joinOrLeaveRoomButton = this.state.hasJoinedRoom ? (
-			<button className='btn btn-danger' label="Leave Room" secondary={true} onClick={this.leaveRoom}>Leave Room</button>
+			<button className='btn join-leave-button btn-danger' label="Leave Room" secondary={true} onClick={this.leaveRoom}>Leave Room</button>
 		) : (
-			<button className='btn btn-danger' label="Join Room" primary={true} onClick={this.joinRoom}>Join Room</button>
+			<button className='btn join-leave-button btn-danger' label="Join Room" primary={true} onClick={this.joinRoom}>Join Room</button>
 		);
 		return (
 
-					<span className="container video-container">
-						{showLocalTrack}
-						<span className="flex-item">
+
+			<div className="panel panel-success">
+			<div className="panel-heading">
+			<span className="flex-item join-leave-input">
 							<input
 								type = 'text'
+								className='join-leave-input-field'
 								placeholder="Room Name"
 								onChange={this.handleRoomNameChange}
 								errorText={this.state.roomNameErr ? 'Room Name is required' : undefined}
 							/>
-							<br />
 							{joinOrLeaveRoomButton}
 						</span>
+			</div>
+			<div className="panel-body panel-video">
+					<span className="container video-container">
+						{showLocalTrack}
+
 						<span className="item other-user" ref="remoteMedia" id="remote-media" />
 					</span>
+
+				</div>
+
+				</div>
 
 		);
 	}

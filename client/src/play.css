@@ -47,7 +47,7 @@ body {
 
 .panel-heading {
     position: relative !important;
-    height: 40px !important;
+    height: 45px !important;
     padding: 0;
 }
 
@@ -73,5 +73,23 @@ body {
 .panel-video {
 
     padding: 0!important;
+}
+
+.join-leave-input {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.join-leave-input-field {
+display: inline;
+vertical-align: middle;
+
+}
+
+.join-leave-button {
+    height: 80%;
+    position: relative;
+    vertical-align: middle;
 }
 

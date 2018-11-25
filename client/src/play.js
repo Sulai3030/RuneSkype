@@ -400,15 +400,7 @@ render( ) {
               </div>
               {/* <!-- /.col-lg-4 --> */}
               <div className="col-lg-5">
-                  <div className="panel panel-success">
-                      <div className="panel-heading">
-                          Success Panel
-                      </div>
-                      <div className="panel-body panel-video">
-                      <VideoComponent />
-                          </div>
-
-                  </div>
+                <VideoComponent />
               </div>
               {/* <!-- /.col-lg-4 --> */}
           </div>
