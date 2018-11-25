@@ -36,11 +36,13 @@ export default class VideoComponent extends Component {
 
 		console.log("Joining room '" + this.state.roomName + "'...");
 		let connectOptions = {
-			name: this.state.roomName
+			name: this.state.roomName,
+			video: { width: 180 }
 		};
 
 		if (this.state.previewTracks) {
 			connectOptions.tracks = this.state.previewTracks;
+			
 		}
 
 		// Join the Room with the token from the server and the
