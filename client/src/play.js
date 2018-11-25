@@ -404,7 +404,7 @@ render( ) {
                       <div className="panel-heading">
                           Success Panel
                       </div>
-                      <div className="panel-body">
+                      <div className="panel-body panel-video">
                       <VideoComponent />
                           </div>
 

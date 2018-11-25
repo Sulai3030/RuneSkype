@@ -56,9 +56,22 @@ body {
     font-size: 0.8 em;
 }
 
-.video-pane {
-    display: inline;
+.other-user {
+    display: inline!important;
     margin: 0 !important;
     padding: 0 !important;
+    float: left !important;
+}
+
+.self-user {
+    display: inline!important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: left !important;
+}
+
+.panel-video {
+
+    padding: 0!important;
 }
 
