@@ -1,0 +1,52 @@
+  #mapdiv {
+        height: 600px;
+        width: 800px;
+        position: relative;
+    }
+
+
+    area {
+        z-index: 2;
+    }
+
+    .dot {
+        position: absolute;
+    }
+
+
+     span {
+        position: absolute;
+        background-color: black;
+        cursor: move;
+        z-index: 10;
+
+    }
+
+    #LI_1 {
+        width: 5px;
+        height: 5px;
+        left: 0;
+        bottom: 0;
+
+    }
+
+    #LI_2 {
+        width: 3px;
+        height: 3px;
+        left: 90px;
+        bottom: 58px;
+
+    }
+
+        #LI_3 {
+        width: 8px;
+        height: 8px;
+        left: 124px;
+        bottom: 58px;
+ 
+    }
+
+    area {
+        background: url('circle.png');
+        background-size: contain;
+    }

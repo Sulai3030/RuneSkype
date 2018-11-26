@@ -47,7 +47,7 @@ body {
 
 .panel-heading {
     position: relative !important;
-    height: 40px !important;
+    height: 45px !important;
     padding: 0;
 }
 
@@ -56,7 +56,40 @@ body {
     font-size: 0.8 em;
 }
 
-.video-container {
-    height: 120px !important;
-    width: 200px !important;
+.other-user {
+    display: inline!important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: left !important;
 }
+
+.self-user {
+    display: inline!important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: left !important;
+}
+
+.panel-video {
+
+    padding: 0!important;
+}
+
+.join-leave-input {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.join-leave-input-field {
+display: inline;
+vertical-align: middle;
+
+}
+
+.join-leave-button {
+    height: 80%;
+    position: relative;
+    vertical-align: middle;
+}
+

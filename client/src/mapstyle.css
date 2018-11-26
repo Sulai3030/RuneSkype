@@ -1,0 +1,55 @@
+#mapdiv {
+    height: 600px;
+    width: 800px;
+    position: relative;
+    background-image: url('/resources/gameboard.gif');
+    background-size: contain;
+}
+
+    area {
+        z-index: 2;
+    }
+
+    .dot {
+        position: absolute;
+    }
+
+
+     span {
+        position: absolute;
+        background-color: black;
+
+    }
+
+    #LI_1 {
+        width: 15px;
+        height: 15px;
+        background-image: url('circle.png');
+        background-size: contain;
+        background-color: rgba(0, 0, 0, 0);
+
+    }
+
+    #LI_2 {
+        width: 13px;
+        height: 13px;
+
+
+    }
+
+        #LI_3 {
+        width: 18px;
+        height: 18px;
+
+ 
+    }
+
+    li {
+
+    }
+
+    #mapcontainer {
+        width: 500px;
+        height: 350px; 
+        overflow:hidden; 
+    }

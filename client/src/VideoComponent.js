@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import Video from 'twilio-video';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-import { Card,  CardText } from 'material-ui/Card';
 import API from './utils/API'
 
 export default class VideoComponent extends Component {
@@ -39,11 +36,13 @@ export default class VideoComponent extends Component {
 
 		console.log("Joining room '" + this.state.roomName + "'...");
 		let connectOptions = {
-			name: this.state.roomName
+			name: this.state.roomName,
+			video: { width: 180 }
 		};
 
 		if (this.state.previewTracks) {
 			connectOptions.tracks = this.state.previewTracks;
+			
 		}
 
 		// Join the Room with the token from the server and the
@@ -156,36 +155,45 @@ export default class VideoComponent extends Component {
 	render() {
 		// Only show video track after user has joined a room
 		let showLocalTrack = this.state.localMediaAvailable ? (
-			<div className="item videopane">
-				<div ref="localMedia" />
-			</div>
+			<span className="flex-item self-user">
+				<span ref="localMedia" />
+			</span>
 		) : (
 			''
 		);
 		// Hide 'Join Room' button if user has already joined a room.
 		let joinOrLeaveRoomButton = this.state.hasJoinedRoom ? (
-			<RaisedButton label="Leave Room" secondary={true} onClick={this.leaveRoom} />
+			<button className='btn join-leave-button btn-danger' label="Leave Room" secondary={true} onClick={this.leaveRoom}>Leave Room</button>
 		) : (
-			<RaisedButton label="Join Room" primary={true} onClick={this.joinRoom} />
+			<button className='btn join-leave-button btn-danger' label="Join Room" primary={true} onClick={this.joinRoom}>Join Room</button>
 		);
 		return (
-			<Card>
-				<CardText>
-					<div className="container video-container">
-						{showLocalTrack}
-						<div className="flex-item">
-							<TextField
-								hintText="Room Name"
+
+
+			<div className="panel panel-success">
+			<div className="panel-heading">
+			<span className="flex-item join-leave-input">
+							<input
+								type = 'text'
+								className='join-leave-input-field'
+								placeholder="Room Name"
 								onChange={this.handleRoomNameChange}
 								errorText={this.state.roomNameErr ? 'Room Name is required' : undefined}
 							/>
-							<br />
 							{joinOrLeaveRoomButton}
-						</div>
-						<div className="flex-item" ref="remoteMedia" id="remote-media" />
-					</div>
-				</CardText>
-			</Card>
+						</span>
+			</div>
+			<div className="panel-body panel-video">
+					<span className="container video-container">
+						{showLocalTrack}
+
+						<span className="item other-user" ref="remoteMedia" id="remote-media" />
+					</span>
+
+				</div>
+
+				</div>
+
 		);
 	}
 }

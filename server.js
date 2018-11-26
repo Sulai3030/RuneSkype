@@ -12,6 +12,7 @@ app.get('env')
 
 
 
+
 if(process.env.NODE_ENV === "development") { // Configuration for development environment
     var webpackDevMiddleware = require("webpack-dev-middleware");
     var webpackConfig = require("./webpack.config.js");
