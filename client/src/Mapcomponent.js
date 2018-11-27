@@ -1,54 +1,40 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import './mapstyle.css'
-// import { DropTarget } from 'react-dnd'
-import DragMap from './dragmap'
-import DragIcon from './dragicon'
-
-
-
-// const Types = {
-//  ITEM: 'map'
-// }
-// function collect(connect, monitor) {
-//  return {
-//  connectDropTarget: connect.dropTarget()
-//  }
-// }
-
-
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 
 class MapComponent extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      drag : 'map'
-    }
+      lat: 51.505,
+      lng: -0.09,
+      zoom: 13
+    };
   }
-
-
-
-
 
   render() {
     
-
-    // const { connectDropTarget } = this.props
+    const position = [this.state.lat, this.state.lng];
+   
+    
     return (
 
       
             
           <div id='mapcontainer'>
-          
-          <div id='mapspace'>
 
-
-          {this.state.drag === 'map' ? <DragMap></DragMap> : <DragIcon></DragIcon>}
-
-
-
-
-           </div>
+               <Map center={position} zoom={this.state.zoom}>
+        <TileLayer
+          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+          url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      </Map>
+         
          </div>
        
 

@@ -1,17 +1,4 @@
-#mapdiv {
-    height: 600px;
-    width: 800px;
-    position: relative;
-    background-image: url('/resources/gameboard.gif');
-    background-size: contain;
-}
 
-#mapspace {
-    height: 1000px;
-    width: 1200px;
-    position: relative;
-
-}
 
     area {
         z-index: 2;
@@ -52,12 +39,14 @@
  
     }
 
-    li {
-
-    }
 
     #mapcontainer {
         width: 500px;
-        height: 350px; 
-        overflow:hidden; 
+        height: 450px; 
+    
     }
+
+    .leaflet-container {
+        height: 400px;
+        width: 100%;
+      }
