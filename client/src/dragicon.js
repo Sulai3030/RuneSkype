@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import './mapstyle.css'
 // import { DropTarget } from 'react-dnd'
-import DragMap from './dragmap'
-import DragIcon from './dragicon'
+import Draggable from 'react-draggable';
+// import Map from './Map'
 
 
 
@@ -18,14 +18,7 @@ import DragIcon from './dragicon'
 
 
 
-class MapComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drag : 'map'
-    }
-  }
-
+class DragIcon extends Component {
 
 
 
@@ -37,23 +30,16 @@ class MapComponent extends Component {
     return (
 
       
-            
-          <div id='mapcontainer'>
-          
-          <div id='mapspace'>
-
-
-          {this.state.drag === 'map' ? <DragMap></DragMap> : <DragIcon></DragIcon>}
-
-
-
-
+            <div  id='mapdiv'>
+            <Draggable>
+             <span className='dot' id='LI_1'></span>
+             </Draggable>
            </div>
-         </div>
+
        
 
 
        )
       }
      }
-     export default MapComponent
+     export default DragIcon

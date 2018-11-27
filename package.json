@@ -31,6 +31,7 @@
     "faker": "^4.1.0",
     "if-env": "^1.0.4",
     "jquery": "^3.3.1",
+    "npm": "^6.4.1",
     "react": "^16.6.3",
     "react-dnd": "^6.0.0",
     "react-dnd-html5-backend": "^6.0.0",
@@ -53,5 +54,5 @@
   "bugs": {
     "url": "https://github.com/Jroze88/RuneSkype/issues"
   },
-  "homepage": "."
+  "homepage": "http://."
 }
