@@ -6,12 +6,20 @@
     background-size: contain;
 }
 
+#mapspace {
+    height: 1000px;
+    width: 1200px;
+    position: relative;
+
+}
+
     area {
         z-index: 2;
     }
 
     .dot {
         position: absolute;
+        z-index: 5;
     }
 
 
