@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './mapstyle.css'
 import Draggable from 'react-draggable'
+import Icon from './icon'
 
 
 
@@ -42,20 +43,15 @@ export default class MapComponent extends Component {
       
             
    
-            
-      <div id='mapcontainer'>
-      {this.state.draggable === 'map' ? 
+            <div id='mapcontainer'>
+
+                  <Icon /> 
       <Draggable>
-        <div id='mapdiv' onClick={this.clickSwap}>
-            <span onClick={this.clickSwap} className='dot' id='LI_1'></span>
+        <div id='mapdiv'>
+
         </div>
       </Draggable>
-      : <div onClick={this.clickSwap} id='mapdiv'>
-      <Draggable>
-        <span onClick={this.clickSwap} className='dot' id='LI_1'></span>
-      </Draggable>
-      </div> }
-      </div>
+          </div>
        
 
 
