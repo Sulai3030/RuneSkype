@@ -431,9 +431,9 @@ class Home extends Component {
           <nav>
               <ul className="cd-primary-nav">
                   <li><a href="#home">Home</a></li>
-                  <li><a href="/play">Play</a></li>
-                  <li><a href="#create">Create a Chat</a></li>
-                  <li><a href="#join-chat">Join A Chat</a></li>
+                  <li><a href="/play">Join A Game</a></li>
+                  <li><a href="#create">Create A Game</a></li>
+                  <li><a href="#join-chat">Register</a></li>
                   <li><a href="#profile">Profile</a></li>
           
                   <li className="cd-label">Follow us</li>
@@ -445,7 +445,26 @@ class Home extends Component {
               </ul>
           </nav>
           
-    
+          <section className="cd-intro" id="home">
+              <div className="intro-wrapper">
+                  <div className="hero-content">
+                      <div className="align-center">
+                          <h1>RuneSkype</h1>
+          
+                          <p>Join us for a game, complete with live chat.</p>
+          
+                          <div className="modal-video-container">
+                              <a className="swipebox-video btn btn-radius" href="https://www.youtube.com/watch?v=mdfMT5Zi8Eo"><span
+                                      className="glyphicon glyphicon-play"></span></a>
+                          </div>
+          
+                          <div className="icon-arrow-down scroll-down-anim">
+                              <a href="#main-content"><img src="img/icon-arrow-down.svg" alt="down-arrow" /></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
           <div id="mainbody page-wrapper">
               {/* <!-- /.row --> */}
               <div className="firstrow row">
