@@ -1,45 +1,61 @@
-import React, { Component } from 'react';
-import $ from 'jquery';
+import React, {Component} from 'react';
 import './mapstyle.css'
-// import { DropTarget } from 'react-dnd'
-import Draggable from 'react-draggable';
-// import Map from './Map'
+import Draggable from 'react-draggable'
+import Icon from './icon'
 
 
 
-// const Types = {
-//  ITEM: 'map'
-// }
-// function collect(connect, monitor) {
-//  return {
-//  connectDropTarget: connect.dropTarget()
-//  }
-// }
 
 
 
-class MapComponent extends Component {
-  constructor(props) {
-    super(props);
+
+export default class MapComponent extends Component {
+  constructor() {
+    super();
+    this.state = {
+      draggable : 'map'
+    };
+  }
+
+  clickSwap = () => {
+      if (this.state === 'map') {
+        this.setState({
+          draggable : 'icon'
+        })
+      }
+      else if (this.state === 'icon') {
+        this.setState({
+          draggable: 'map'
+        })
+      }
+  }
+
+  componentDidMount() {
+
   }
 
   render() {
-    // const { connectDropTarget } = this.props
+    
+   
+    
     return (
 
-
+      
             
-          <div id='mapcontainer'>
-          <div id='mapdiv'>
-           <Draggable>
-             <span className='dot' id='LI_1'></span>
-           </Draggable>
-           </div>
-         </div>
+   
+            <div id='mapcontainer'>
+
+                  <Icon /> 
+      <Draggable>
+        <div id='mapdiv'>
+
+        </div>
+      </Draggable>
+          </div>
        
 
 
        )
       }
      }
-     export default MapComponent
+     
