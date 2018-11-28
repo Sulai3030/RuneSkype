@@ -451,11 +451,9 @@ class Home extends Component {
                       <div className="align-center">
                           <h1>RuneSkype</h1>
           
-                          <p>Join us for a game, complete with live chat.</p>
+                          <p>Join us for a game, complete with live videochat.</p>
           
-                          <div className="modal-video-container">
-                              <a className="swipebox-video btn btn-radius" href="https://www.youtube.com/watch?v=mdfMT5Zi8Eo"><span
-                                      className="glyphicon glyphicon-play"></span></a>
+                          <div className="modal-image-container">
                           </div>
           
                           <div className="icon-arrow-down scroll-down-anim">
