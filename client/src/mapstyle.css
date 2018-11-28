@@ -1,4 +1,10 @@
-
+#mapdiv {
+    height: 2200px;
+    width: 1800px;
+    background-image: url('/resources/hex.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
     area {
         z-index: 2;
@@ -39,14 +45,8 @@
  
     }
 
-
-    #mapcontainer {
-        width: 500px;
-        height: 450px; 
-    
-    }
-
-    .leaflet-container {
-        height: 400px;
-        width: 100%;
-      }
+.map-panel {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
