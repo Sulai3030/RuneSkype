@@ -3,6 +3,7 @@ import './play.css'
 import $ from 'jquery';
 import Chance from 'chance';
 import VideoComponent from './VideoComponent'
+import MapComponent from './Mapcomponent'
 import './components/metisMenu.css';
 import './components/sb-admin-2.css';
 import './play.css';
@@ -378,28 +379,16 @@ render( ) {
                   </div>
               </div> */}
               {/* <!-- /.col-lg-4 --> */}
-              <div className="col-lg-5">
+              <div className="col-lg-6">
                   <div className="panel panel-primary">
-                      <div className="panel-heading">
-                          Primary Panel
-                      </div>
-                      <div className="panel-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                      </div>
-                  </div>
-              </div>
-              <div className="col-lg-2">
-                  <div className="panel panel-primary">
-                      <div className="panel-heading">
-                          Primary Panel
-                      </div>
-                      <div className="panel-body">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+
+                      <div className="panel-body map-panel">
+                      <MapComponent />
                       </div>
                   </div>
               </div>
               {/* <!-- /.col-lg-4 --> */}
-              <div className="col-lg-5">
+              <div className="col-lg-6">
                 <VideoComponent />
               </div>
               {/* <!-- /.col-lg-4 --> */}

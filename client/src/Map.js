@@ -1,42 +1,33 @@
-// import React, { Component } from 'react';
-// import $ from 'jquery';
-// import Draggable from 'react-draggable';
-// import { DragSource } from 'react-dnd'
 
-// const Types = {
-//     ITEM: 'map'
-//    }
+// const { Map: LeafletMap, TileLayer, Marker, Popup } = ReactLeaflet
 
-
-
-
-
-//    const itemSource = {
-//     beginDrag(props) {
- 
-//         return {map: 'main'}
-//     },
-//     endDrag(props) {
+// class SimpleExample extends React.Component {
+//   constructor() {
+//     super()
+//     this.state = {
+//       lat: 51.505,
+//       lng: -0.09,
+//       zoom: 13
 //     }
-//    }
-//    function collect(connect, monitor) {
-//     return {
-//     connectDragSource: connect.dragSource(),
-//     isDragging: monitor.isDragging()
-//     }
-//    }
-//    class Map extends Component {
-//     render() {
-//     const { isDragging, connectDragSource, map } = this.props
-//     return connectDragSource(
-//         <div id='mapdiv'>
-//                   <Draggable><span className='dot' id='LI_1'>
-//                   {map}
-//                   </span></Draggable>
-//                 </div>
-//     )
-//     }
-//    }
-//    export default DragSource(Types.ITEM, itemSource, collect)(Map)
+//   }
+
+//   render() {
+//     const position = [this.state.lat, this.state.lng];
+//     return (
+//       <LeafletMap center={position} zoom={this.state.zoom}>
+//         <TileLayer
+//           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+//           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+//         />
+//         <Marker position={position}>
+//           <Popup>
+//             A pretty CSS3 popup. <br/> Easily customizable.
+//           </Popup>
+//         </Marker>
+//       </LeafletMap>
+//     );
+//   }
+// }
 
 
+// ReactDOM.render(<SimpleExample />, document.getElementById('container'))
