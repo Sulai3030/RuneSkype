@@ -397,397 +397,425 @@ class Home extends Component {
     
       }
 
-      render() {
-          return( 
-                <div className="App">
-          <div id="preloader">
-              <div className="loader">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
+      render( ) {
+        return(
+    
+          <div id="wrapper">
+    
+          {/* {/* <!-- Navigation --> */} 
+          <nav className="navbar playnav navbar-default navbar-static-top" role="navigation" style={{marginBottom: 0}}>
+              <div className="navbar-header">
+                  <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span className="sr-only">Toggle navigation</span>
+                      <span className="icon-bar"></span>
+                      <span className="icon-bar"></span>
+                      <span className="icon-bar"></span>
+                  </button>
+                  <a className="navbar-brand" href="index.html">SB Admin v2.0</a>
+              </div>
+              {/* <!-- /.navbar-header --> */}
+    
+              <ul className="nav navbar-top-links navbar-right">
+                  <li className="dropdown">
+                      <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                          <i className="fa fa-envelope fa-fw"></i> <i className="fa fa-caret-down"></i>
+                      </a>
+                      <ul className="dropdown-menu dropdown-messages">
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <strong>John Smith</strong>
+                                      <span className="pull-right text-muted">
+                                          <em>Yesterday</em>
+                                      </span>
+                                  </div>
+                                  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <strong>John Smith</strong>
+                                      <span className="pull-right text-muted">
+                                          <em>Yesterday</em>
+                                      </span>
+                                  </div>
+                                  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <strong>John Smith</strong>
+                                      <span className="pull-right text-muted">
+                                          <em>Yesterday</em>
+                                      </span>
+                                  </div>
+                                  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a className="text-center" href="#">
+                                  <strong>Read All Messages</strong>
+                                  <i className="fa fa-angle-right"></i>
+                              </a>
+                          </li>
+                      </ul>
+                      {/* <!-- /.dropdown-messages --> */}
+                  </li>
+                  {/* <!-- /.dropdown --> */}
+                  <li className="dropdown">
+                      <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                          <i className="fa fa-tasks fa-fw"></i> <i className="fa fa-caret-down"></i>
+                      </a>
+                      <ul className="dropdown-menu dropdown-tasks">
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <p>
+                                          <strong>Task 1</strong>
+                                          <span className="pull-right text-muted">40% Complete</span>
+                                      </p>
+                                      <div className="progress progress-striped active">
+                                          <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width: 40 + '%'}}>
+                                              <span className="sr-only">40% Complete (success)</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <p>
+                                          <strong>Task 2</strong>
+                                          <span className="pull-right text-muted">20% Complete</span>
+                                      </p>
+                                      <div className="progress progress-striped active">
+                                          <div className="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style={{width: 20 + '%'}}>
+                                              <span className="sr-only">20% Complete</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <p>
+                                          <strong>Task 3</strong>
+                                          <span className="pull-right text-muted">60% Complete</span>
+                                      </p>
+                                      <div className="progress progress-striped active">
+                                          <div className="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{width: 60 + '%'}}>
+                                              <span className="sr-only">60% Complete (warning)</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <p>
+                                          <strong>Task 4</strong>
+                                          <span className="pull-right text-muted">80% Complete</span>
+                                      </p>
+                                      <div className="progress progress-striped active">
+                                          <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{width: 80 + '%'}}>
+                                              <span className="sr-only">80% Complete (danger)</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a className="text-center" href="#">
+                                  <strong>See All Tasks</strong>
+                                  <i className="fa fa-angle-right"></i>
+                              </a>
+                          </li>
+                      </ul>
+                      {/* <!-- /.dropdown-tasks --> */}
+                  </li>
+                  {/* <!-- /.dropdown --> */}
+                  <li className="dropdown">
+                      <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                          <i className="fa fa-bell fa-fw"></i> <i className="fa fa-caret-down"></i>
+                      </a>
+                      <ul className="dropdown-menu dropdown-alerts">
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <i className="fa fa-comment fa-fw"></i> New Comment
+                                      <span className="pull-right text-muted small">4 minutes ago</span>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <i className="fa fa-twitter fa-fw"></i> 3 New Followers
+                                      <span className="pull-right text-muted small">12 minutes ago</span>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <i className="fa fa-envelope fa-fw"></i> Message Sent
+                                      <span className="pull-right text-muted small">4 minutes ago</span>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <i className="fa fa-tasks fa-fw"></i> New Task
+                                      <span className="pull-right text-muted small">4 minutes ago</span>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a href="#">
+                                  <div>
+                                      <i className="fa fa-upload fa-fw"></i> Server Rebooted
+                                      <span className="pull-right text-muted small">4 minutes ago</span>
+                                  </div>
+                              </a>
+                          </li>
+                          <li className="divider"></li>
+                          <li>
+                              <a className="text-center" href="#">
+                                  <strong>See All Alerts</strong>
+                                  <i className="fa fa-angle-right"></i>
+                              </a>
+                          </li>
+                      </ul>
+                      {/* <!-- /.dropdown-alerts --> */}
+                  </li>
+                  {/* <!-- /.dropdown --> */}
+                  <li className="dropdown">
+                      <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                          <i className="fa fa-user fa-fw"></i> <i className="fa fa-caret-down"></i>
+                      </a>
+                      <ul className="dropdown-menu dropdown-user">
+                          <li><a href="#"><i className="fa fa-user fa-fw"></i> User Profile</a>
+                          </li>
+                          <li><a href="#"><i className="fa fa-gear fa-fw"></i> Settings</a>
+                          </li>
+                          <li className="divider"></li>
+                          <li><a href="login.html"><i className="fa fa-sign-out fa-fw"></i> Logout</a>
+                          </li>
+                      </ul>
+                      {/* <!-- /.dropdown-user --> */}
+                  </li>
+                  {/* <!-- /.dropdown --> */}
+              </ul>
+              {/* <!-- /.navbar-top-links --> */}
+    
+              <div className="navbar-default sidebar" role="navigation">
+                  <div className="sidebar-nav navbar-collapse">
+                      
+                  </div>
+                  {/* <!-- /.sidebar-collapse --> */}
+              </div>
+              {/* <!-- /.navbar-static-side --> */}
+          </nav>
+    
+          <div id="mainbody page-wrapper">
+              {/* <!-- /.row --> */}
+              <div className="firstrow row">
+                  {/* <div className="col-lg-4">
+                      <div className="panel panel-default">
+                          <div className="panel-heading">
+                              Default Panel
+                          </div>
+                          <div className="panel-body">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                          </div>
+                          <div className="panel-footer">
+                              Panel Footer
+                          </div>
+                      </div>
+                  </div> */}
+                  {/* <!-- /.col-lg-4 --> */}
+                  <div className="col-lg-6">
+                      <div className="panel panel-primary">
+                          <div className="panel-heading">
+                              Primary Panel
+                          </div>
+                          <div className="panel-body">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                          </div>
+                      </div>
+                  </div>
+                  {/* <!-- /.col-lg-4 --> */}
+                  <div className="col-lg-6">
+                    <VideoComponent />
+                  </div>
+                  {/* <!-- /.col-lg-4 --> */}
+              </div>
+              <div className="row secondrow">
+                  <div className="col-lg-6">
+                      <div className="panel panel-default">
+                          <div className="panel-heading">
+      <ul className="nav nav-pills">
+                                  <li className=" panelnav-item active"><a href="#home-pills" data-toggle="tab">Home</a>
+                                  </li>
+                                  <li className='panelnav-item' ><a href="#profile-pills" data-toggle="tab">Profile</a>
+                                  </li>
+                                  <li className='panelnav-item' ><a href="#messages-pills" data-toggle="tab">Messages</a>
+                                  </li>
+                                  <li className='panelnav-item' ><a href="#settings-pills" data-toggle="tab">Settings</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          {/* <!-- /.panel-heading --> */}
+                          <div className="panel-body">
+                              {/* <!-- Nav tabs --> */}
+                              
+    
+                              {/* <!-- Tab panes --> */}
+                              <div className="tab-content">
+                                  <div className="tab-pane fade in active" id="home">
+                                      </div>
+                                  <div className="tab-pane fade" id="profile">
+                                      </div>
+                                  <div className="tab-pane fade" id="messages">
+                                      </div>
+                                  <div className="tab-pane fade" id="settings">
+                                      </div>
+                              </div>
+                          </div>
+                          {/* <!-- /.panel-body --> */}
+                      </div>
+                      {/* <!-- /.panel --> */}
+                  </div>
+                  {/* <!-- /.col-lg-6 --> */}
+                  <div className="col-lg-6">
+                      <div className="panel panel-default">
+                          <div className="panel-heading">
+                          <ul className="nav nav-pills">
+                                  <li className="panelnav-item active"><a href="#home-pills" data-toggle="tab">Home</a>
+                                  </li>
+                                  <li className='panelnav-item' ><a href="#profile-pills" data-toggle="tab">Profile</a>
+                                  </li>
+                                  <li className='panelnav-item' ><a href="#messages-pills" data-toggle="tab">Messages</a>
+                                  </li>
+                                  <li className='panelnav-item' ><a href="#settings-pills" data-toggle="tab">Settings</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          {/* <!-- /.panel-heading --> */}
+                          <div className="panel-body">
+                              {/* <!-- Nav tabs --> */}
+    
+    
+                              {/* <!-- Tab panes --> */}
+                              <div className="tab-content">
+                                  <div className="tab-pane fade in active" id="home-pills">
+                                      </div>
+                                  <div className="tab-pane fade" id="profile-pills">
+                                     </div>
+                                  <div className="tab-pane fade" id="messages-pills">
+                                       </div>
+                                  <div className="tab-pane fade" id="settings-pills">
+                                       </div>
+                              </div>
+                          </div>
+                          {/* <!-- /.panel-body --> */}
+                      </div>
+                      {/* <!-- /.panel --> */}
+                  </div>
+                  {/* <!-- /.col-lg-6 --> */}
               </div>
           </div>
-          <header className="cd-header">
-              <div className="cd-logo"><i className="fa fa-gamepad"></i></div>
+          {/* <!-- /#page-wrapper --> */}
+    
+      </div>
+      /* <!-- /#wrapper --> */
+    
+    
+    
+    
+    
+    
+        //     <div className="app playfield container-flex">
           
-              <nav>
-                  <ul className="cd-secondary-nav">
-                      <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#registrationModal">Register</a></li>
-                  </ul>
-              </nav>
-             
-          
-              <a className="cd-primary-nav-trigger" href="#">
-                  <span className="cd-menu-text"></span><span className="cd-menu-icon"></span>
-              </a> 
-          </header>
-          
-          <nav>
-              <ul className="cd-primary-nav">
-                  <li><a href="#home">Home</a></li>
-                  <li><a href="/play">Play</a></li>
-                  <li><a href="#create">Create a Chat</a></li>
-                  <li><a href="#join-chat">Join A Chat</a></li>
-                  <li><a href="#profile">Profile</a></li>
-          
-                  <li className="cd-label">Follow us</li>
-          
-                  <li className="cd-social cd-facebook"><a href="#">Facebook</a></li>
-                  <li className="cd-social cd-instagram"><a href="#">Instagram</a></li>
-                  <li className="cd-social cd-dribbble"><a href="#">Dribbble</a></li>
-                  <li className="cd-social cd-twitter"><a href="#">Twitter</a></li>
-              </ul>
-          </nav>
-          
-          <section className="cd-intro" id="home">
-              <div className="intro-wrapper">
-                  <div className="hero-content">
-                      <div className="align-center">
-                          <h1>RuneSkype</h1>
-          
-                          <p>Join us for a game, complete with live chat.</p>
-          
-                          <div className="modal-video-container">
-                              <a className="swipebox-video btn btn-radius" href="https://www.youtube.com/watch?v=mdfMT5Zi8Eo"><span
-                                      className="glyphicon glyphicon-play"></span></a>
-                          </div>
-          
-                          <div className="icon-arrow-down scroll-down-anim">
-                              <a href="#main-content"><img src="img/icon-arrow-down.svg" alt="down-arrow" /></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </section>
-          
-          <main className="cd-main-content" id="main-content">
-          
-              <div className="promo-feature-area section">
-                  <div className="container">
-          
-                      <div className="row">
-                          <div className="col-sm-4">
-                              <div className="promo-inner-area-gym">
-                                  <img src="img/gym/gym-1.jpg" alt="Gym" />
-          
-                                  <h4>Play</h4>
-          
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe voluptas, placeat cum eos
-                                      dignissimos, hic quos enim, qui quisquam sint illo.</p>
-                              </div>
-                          </div>
-                          <div className="col-sm-4">
-                              <div className="promo-inner-area-gym">
-                                  <img src="img/gym/gym-2.jpg" alt="Gym" />
-          
-                                  <h4>Chat</h4>
-          
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe voluptas, placeat cum eos
-                                      dignissimos, hic quos enim, qui quisquam sint illo.</p>
-                              </div>
-                          </div>
-                          <div className="col-sm-4">
-                              <div className="promo-inner-area-gym">
-                                  <img src="img/gym/gym-3.jpg" alt="Gym"/>
-          
-                                  <h4>Record Your Stats</h4>
-          
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe voluptas, placeat cum eos
-                                      dignissimos, hic quos enim, qui quisquam sint illo.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          
-              <div className="play-section-agency" id="play">
-                  <div className="container">
-                      <div className="row text-center">
-                          <div className="play-heading">
-                              <h2>Play Game</h2>
-                          </div>
-                      </div>
-                      <div className="row">
-                          <div className="col-md-5 col-sm-6">
-                              <div className="play-icon-box">
-                              </div>
-                              
-                      </div>
-                  </div>
-                  </div>
-                  </div>
-          
-              <div className="section create" id="create">
-                  <div className="container">
-                      <div className="row text-center">
-                          <div className="play-heading">
-                              <h2>Create A Chat</h2>
-                          </div>
-                      </div>
-                      <div className="row">
-                          <div className="col-md-5 col-sm-6">
-                              <div className="play-icon-box">
-                              </div>
-                              
-                      </div>
-                  </div>
-                  </div>
-              </div>
-          
-              <div className="join-chat section" id="join-chat">
-                  <div className="container">
-                      <div className="row text-center">
-                          <div className="play-heading">
-                              <h2>Join A Chat</h2>
-                          </div>
-                      </div>
-                      <div className="row">
-                          <div className="col-md-5 col-sm-6">
-                              <div className="play-icon-box">
-                              </div>
-                              
-                      </div>
-                  </div>
-                  </div>
-              </div>
-          
-              <div className="profile section">
-                  <div className="container">
-                      <div className="row text-center">
-                          <div className="play-heading">
-                              <h2>Profile</h2>
-                          </div>
-                      </div>
-                      <div className="row">
-                          <div className="col-md-5 col-sm-6">
-                              <div className="play-icon-box">
-                              </div>
-                              
-                      </div>
-                  </div>
-                  </div>
-              </div>
-          
-              <div className="contact-us-area section" id="contact">
-                  <div className="container">
-                      <div className="row">
-                          <div className="col-md-10 col-md-offset-1 text-center">
-                              <div className="contact-header">
-                                  <h2 className="section-title">CONTACT US</h2>
-                              </div>
-                          </div>
-                       
-                      </div>
-                   
-                      <div className="row">
-                          <div className="contact-info">
-                              <div className="input-form">
-                                  <form action="#" id="contact-form">
-                                      <div className="row">
-                                          <div className="col-md-6 col-xs-12">
-          
-                                          <span className="input input--chisato">
-                                              <input className="input__field input__field--chisato" type="text" id="name"/>
-                                              <label className="input__label input__label--chisato" htmlFor="name">
-                                                  <span className="input__label-content input__label-content--chisato"
-                                                        data-content="Your Name">Your Name</span>
-                                              </label>
-                                          </span>
-                                          </div>
-                                      
-                                          <div className="col-md-6">
-                                          <span className="input input--chisato">
-                                              <input className="input__field input__field--chisato" type="text" id="email"/>
-                                              <label className="input__label input__label--chisato" htmlFor="email">
-                                                  <span className="input__label-content input__label-content--chisato"
-                                                        data-content="Your Email">Your Email</span>
-                                              </label>
-                                          </span>
-                                          </div>
-          
-                                     
-                                      </div>
-                                      <div className="row">
-                                          <div className="form-group col-md-12">
-          
-                                          <span className="input input--chisato">
-                                              <textarea name="message" id="message" cols="30" rows="10"
-                                                        className="input__field input__field--chisato"></textarea>
-                                              <label className="input__label input__label--chisato" htmlFor="message">
-                                                  <span className="input__label-content input__label-content--chisato"
-                                                        data-content="Your Message">Your Message</span>
-                                              </label>
-                                          </span>
-                                          </div>
-                                  
-                                      </div>
-                                      <div className="row">
-                                          <div className="form-group no-margin-btm col-md-12 text-center">
-                                              <input type="submit" className="btn btn-send" value="Send" />
-                                          </div>
-                                    
-                                      </div>
-                                      <div className="row">
-                                          <div className="col-md-12">
-                                              <div className="form-message">
-                                                  <div className="success" style={{display : 'none'}}>Your message has been sent successfully.</div>
-                                                  <div className="error" style={{display : 'none'}}>E-mail must be valid and message must be longer than 100 characters.</div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </form>
-                              </div>
+        //                 <div className="row boardrow">
+        //                 <div className='col-1'></div>
+        //                 <div className='col-5 '>
+    
+        //                 </div>
+        //                 <div className='col-1'></div>
+        //                 <div className='col-1'></div>
+        //                 <div className='col-4'>
+        //                 <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+        //     <div>
+        //         <VideoComponent />
+        //     </div>
+        // </MuiThemeProvider>
+        //                 </div>                  
+        //                 </div>
+    
+        //                 <div className='row chatdicediv'>
+                        
+        //                 <div className='col-3'>
+        //                 <div className='chat' id='chat'>
+        //     <div id="chat-messages"></div>
+        //     <div id="chat-bar">
+        //       <input id="chat-input"
+        //       type="text"
+        //       value={this.state.chat}
+        //       name="name"
+        //       onChange={this.handleInputChange}
+        //       placeholder="Chat"
+        //     required="required" />
+        //       <button id="chat-send" onClick={(e) => this.clickHandler(e)}>Send</button>
+        //     </div>
+        //     </div>
+        //                 </div>
+        //                 <div className='col-4'>
+        //                 <div className='characterinfo'>
+                        
+                        
+        //                 </div>
+        //                 </div>
+        //                 <div className='col-5'>
+        //                 <div className='dice'>
+        //                 <div className='dicebuttons'>
+        //                 <button type="button" data="d4" className="btn rollbtn btn-primary" onClick={(e) => this.diceRoller(e)}>D4</button>
+        //                         <button type="button" data="d6" className="btn rollbtn btn-secondary" onClick={(e) => this.diceRoller(e)}>D6</button>
+        //                         <button type="button" data="d8" className="btn rollbtn btn-success" onClick={(e) => this.diceRoller(e)}>D8</button>
+        //                         <button type="button" data="d10" className="btn rollbtn btn-danger" onClick={(e) => this.diceRoller(e)}>D10</button>
+        //                         <button type="button" data="d12" className="btn rollbtn btn-warning" onClick={(e) => this.diceRoller(e)}>D12</button>
+        //                         <button type="button" data="d20" className="btn rollbtn btn-info" onClick={(e) => this.diceRoller(e)}>D20</button></div>
+        //                 <span className='diceresults' style={{backgroundImage : `url(./resources/${this.state.roll}.png)` }}>
+        //                 <center><p>{this.state.rollResult}</p></center>
+        //                 </span>
+        //                 </div>
+        //                 </div>                
+                        
                     
-                          </div>
-                    
-                      </div>
-                
-                  </div>
-               
-          
-              </div>
-          
-          
-          <section id="modals">
-          
-              <div className="modal login fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModal"
-                   aria-hidden="true">
-                  <div className="modal-dialog">
-                      <div className="modal-content">
-                          <div className="modal-header">
-                              <h2 className="form-signin-heading modal-title" id="myModalLabel">Login</h2>
-                          </div>
-                          <form method="post" id="login">
-                              <div className="modal-body">
-                                  <fieldset>
-                                      <div className="row">
-                                          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                              <span className="input input--chisato">
-                                                  <input className="input__field input__field--chisato" type="text" name="username"
-                                                         id="username"/>
-                                                  <label className="input__label input__label--chisato" htmlFor="username">
-                                                      <span className="input__label-content input__label-content--chisato"
-                                                            data-content="Username">Username</span>
-                                                  </label>
-                                              </span>
-          
-                                          </div>
-                                      </div>
-                                      <div className="row">
-                                          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                              <span className="input input--chisato">
-                                                  <input className="input__field input__field--chisato" type="password"
-                                                         name="password" id="password"/>
-                                                  <label className="input__label input__label--chisato" htmlFor="password">
-                                                      <span className="input__label-content input__label-content--chisato"
-                                                            data-content="Password">Password </span>
-                                                  </label>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </fieldset>
-                              </div>
-                              <div className="modal-footer">
-                                  <a href="#" className="pull-left lost-pwd">(Lost Password?)</a>
-                                  <button type="button" className="btn btn-default btn-border" data-dismiss="modal">Close</button>
-                                  <button type="button" className="btn btn-color">Login</button>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          
-              <div className="modal register fade" id="registrationModal" tabIndex="-1" role="dialog"
-                   aria-labelledby="registrationModal" aria-hidden="true">
-                  <div className="modal-dialog">
-                      <div className="modal-content">
-                          <div className="modal-header">
-                              <h2 className="form-signin-heading modal-title" id="registrationModalLabel">Create a new account</h2>
-                          </div>
-                          <form method="post" id="registration">
-                              <div className="modal-body">
-                                  <div className="row">
-                                      <div className="form-group">
-                                          <div className="col-md-6">
-                                              <span className="input input--chisato">
-                                                  <input className="input__field input__field--chisato" type="text" name="firstname"
-                                                         id="firstname"/>
-                                                  <label className="input__label input__label--chisato" htmlFor="firstname">
-                                                      <span className="input__label-content input__label-content--chisato"
-                                                            data-content="First Name">First Name</span>
-                                                  </label>
-                                              </span>
-          
-                                          </div>
-                                          <div className="col-md-6">
-                                              <span className="input input--chisato">
-                                                  <input className="input__field input__field--chisato" type="text" name="lastname"
-                                                         id="lastname"/>
-                                                  <label className="input__label input__label--chisato" htmlFor="lastname">
-                                                      <span className="input__label-content input__label-content--chisato"
-                                                            data-content="Last Name">Last Name</span>
-                                                  </label>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div className="row">
-                                      <div className="form-group">
-                                          <div className="col-md-6">
-                                              <span className="input input--chisato">
-                                                  <input className="input__field input__field--chisato" type="password"
-                                                         name="reg_password" id="reg_password"/>
-                                                  <label className="input__label input__label--chisato" htmlFor="reg_password">
-                                                      <span className="input__label-content input__label-content--chisato"
-                                                            data-content="Password">Password</span>
-                                                  </label>
-                                              </span>
-                                          </div>
-                                          <div className="col-md-6">
-                                              <span className="input input--chisato">
-                                                  <input className="input__field input__field--chisato" type="password"
-                                                         name="re_reg_password" id="re_reg_password"/>
-                                                  <label className="input__label input__label--chisato" htmlFor="re_reg_password">
-                                                      <span className="input__label-content input__label-content--chisato"
-                                                            data-content="Re-enter Password">Re-enter Password</span>
-                                                  </label>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div className="row">
-                                      <div className="form-group">
-                                          <div className="col-md-12">
-                                              <span className="input input--chisato">
-                                                  <input className="input__field input__field--chisato" type="email" name="reg_email"
-                                                         id="reg_email"/>
-                                                  <label className="input__label input__label--chisato" htmlFor="reg_email">
-                                                      <span className="input__label-content input__label-content--chisato"
-                                                            data-content="Email">Email</span>
-                                                  </label>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div className="modal-footer">
-                                  <button type="button" className="btn btn-default btn-border" data-dismiss="modal">Close</button>
-                                  <button type="button" className="btn btn-color">Register</button>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-              
-          </section>
-          </main>
-                </div>
-          );
-      }
-
-
-}
-
-export default Home
+        //                 </div>
+    
+    
+        //               </div>
+        )
+    }
+    
+    }
+    
+    export default Play
