@@ -1,62 +1,51 @@
-// import React, { Component } from "react";
-// import firebase from "firebase";
-// import FileUploader from "react-firebase-file-uploader";
- 
-// class ProfilePage extends Component {
-//   state = {
-//     username: "",
-//     avatar: "",
-//     isUploading: false,
-//     progress: 0,
-//     avatarURL: ""
-//   };
- 
-//   handleChangeUsername = event =>
-//     this.setState({ username: event.target.value });
-//   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
-//   handleProgress = progress => this.setState({ progress });
-//   handleUploadError = error => {
-//     this.setState({ isUploading: false });
-//     console.error(error);
-//   };
-//   handleUploadSuccess = filename => {
-//     this.setState({ avatar: filename, progress: 100, isUploading: false });
-//     firebase
-//       .storage()
-//       .ref("images")
-//       .child(filename)
-//       .getDownloadURL()
-//       .then(url => this.setState({ avatarURL: url }));
-//   };
- 
-//   render() {
-//     return (
-//       <div>
-//         <form>
-//           <label>Username:</label>
-//           <input
-//             type="text"
-//             value={this.state.username}
-//             name="username"
-//             onChange={this.handleChangeUsername}
-//           />
-//           <label>Avatar:</label>
-//           {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
-//           {this.state.avatarURL && <img src={this.state.avatarURL} />}
-//           <FileUploader
-//             accept="image/*"
-//             name="avatar"
-//             randomizeFilename
-//             storageRef={firebase.storage().ref("images")}
-//             onUploadStart={this.handleUploadStart}
-//             onUploadError={this.handleUploadError}
-//             onUploadSuccess={this.handleUploadSuccess}
-//             onProgress={this.handleProgress}
-//           />
-//         </form>
-//       </div>
-//     );
-//   }
-// }
- 
-// export default ProfilePage;
+import React from 'react';
+import DropzoneComponent from 'react-dropzone-component';
+
+export default class DefaultUpload extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.djsConfig = {
+            addRemoveLinks: true,
+            acceptedFiles: "image/jpeg,image/png,image/gif"
+        };
+
+        this.componentConfig = {
+            iconFiletypes: ['.jpg', '.png', '.gif'],
+            showFiletypeIcon: true,
+            postUrl: '/uploadHandler'
+        };
+
+        // If you want to attach multiple callbacks, simply
+        // create an array filled with all your callbacks.
+        this.callbackArray = [() => console.log('Hi!'), () => console.log('Ho!')];
+
+        // Simple callbacks work too, of course
+        this.callback = () => console.log('Hello!');
+
+        this.success = file => console.log('uploaded', file);
+
+        this.progress = file => console.log('progress', file);
+
+        this.removedfile = file => console.log('removing...', file);
+
+        this.dropzone = null;
+    }
+
+    render() {
+        const config = this.componentConfig;
+        const djsConfig = this.djsConfig;
+
+        // For a list of all possible events (there are many), see README.md!
+        const eventHandlers = {
+            init: dz => this.dropzone = dz,
+            drop: this.callbackArray,
+            addedfile: this.callback,
+            success: this.success,
+            removedfile: this.removedfile,
+            uploadprogress: this.progress
+        }
+
+        return <DropzoneComponent config={config} eventHandlers={eventHandlers} djsConfig={djsConfig} />
+    }
+}

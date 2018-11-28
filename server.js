@@ -12,6 +12,7 @@ const {Storage} = require('@google-cloud/storage');
 
 
 
+
 app.get('env')
 
 
@@ -30,7 +31,7 @@ app.get('env')
 
 
   const bucketName = 'images-111'
-  const keyfile = (path.join(__dirname, "gcloud.json"))
+  const keyfile = JSON.stringify(process.env.GCLOUD) || (path.join(__dirname, "gcloud.json"))
  
   const storage = new Storage({
     projectId: "runeskype-1111",
@@ -38,16 +39,6 @@ app.get('env')
   });
 
 
-
-  var bucket = storage.bucket('images-111');
-  var localFilename = 'd4.png';
-  bucket.upload(localFilename, function(err, file) {
-    if (!err) {
-      console.log('somefile-inThisCaseASong.mp3 is now in your bucket.');
-    } else {
-      console.log('Error uploading file: ' + err);
-    }
-  });
 
 
 // // Create a root reference
@@ -88,13 +79,28 @@ let sid = process.env.API_SID
 let secret = process.env.API_SECRET
 
 
-
 // Define API routes here
 
-app.get('/imageupload/', function(req, res) {
+app.post('/image-upload/', (req, res) => {
+  console.log('works!')
+  console.log(req.file)
+  const imageToUpload = req.value;
 
+ 
+  let bucket = storage.bucket(bucketName);
+  let localFilename = imageToUpload;
+
+  bucket.upload(localFilename, function(err, file) {
+    if (!err) {
+      console.log('somefile-inThisCaseASong.mp3 is now in your bucket.');
+    } else {
+      console.log('Error uploading file: ' + err);
+    }
 
 })
+});
+
+
 
 
 app.get('/token/', function(req, res) {
