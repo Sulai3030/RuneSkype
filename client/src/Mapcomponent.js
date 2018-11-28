@@ -1,45 +1,65 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './mapstyle.css'
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import Draggable from 'react-draggable'
 
-class MapComponent extends Component {
+
+
+
+
+
+
+export default class MapComponent extends Component {
   constructor() {
     super();
     this.state = {
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13
+      draggable : 'map'
     };
+  }
+
+  clickSwap = () => {
+      if (this.state === 'map') {
+        this.setState({
+          draggable : 'icon'
+        })
+      }
+      else if (this.state === 'icon') {
+        this.setState({
+          draggable: 'map'
+        })
+      }
+  }
+
+  componentDidMount() {
+
   }
 
   render() {
     
-    const position = [this.state.lat, this.state.lng];
    
     
     return (
 
       
             
-          <div id='mapcontainer'>
-
-               <Map center={position} zoom={this.state.zoom}>
-        <TileLayer
-          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-          url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </Map>
-         
-         </div>
+   
+            
+      <div id='mapcontainer'>
+      {this.state.draggable === 'map' ? 
+      <Draggable>
+        <div id='mapdiv' onClick={this.clickSwap}>
+            <span onClick={this.clickSwap} className='dot' id='LI_1'></span>
+        </div>
+      </Draggable>
+      : <div onClick={this.clickSwap} id='mapdiv'>
+      <Draggable>
+        <span onClick={this.clickSwap} className='dot' id='LI_1'></span>
+      </Draggable>
+      </div> }
+      </div>
        
 
 
        )
       }
      }
-     export default MapComponent
+     
