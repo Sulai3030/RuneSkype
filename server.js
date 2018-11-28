@@ -6,27 +6,48 @@ const app = express();
 const faker = require("faker");
 const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
-const firebase = require('firebase');
+// const admin = require('firebase-admin');
+const {Storage} = require('@google-cloud/storage');
+
+
 
 
 app.get('env')
 
-let config = {
-  apiKey: "AIzaSyD77mctAdWz2fsM-IQ56aSxwrYtK-ZKiW4",
-  authDomain: "runeskype-111.firebaseapp.com",
-  databaseURL: "https://runeskype-111.firebaseio.com",
-  projectId: "runeskype-111",
-  storageBucket: "runeskype-111.appspot.com",
-  messagingSenderId: "47881621290"
-};
-firebase.initializeApp(config);
+
+// gs://runeskype-111.appspot.com
 
 
-  let storageRef = firebase.storage().ref();
+// admin.initializeApp({
+//   credential: admin.credential.cert("firebase.json"),
+//   databaseURL: "https://runeskype-111.firebaseio.com"
+// });
 
-  let imageStorage = storageRef.child('images')
+// let db = admin.database();
+// let ref = db.ref("/");
+// console.log('DB ref: ' + ref); //just to debug, if undefined, there's a problem.
 
 
+
+  const bucketName = 'images-111'
+  const keyfile = (path.join(__dirname, "gcloud.json"))
+ 
+  const storage = new Storage({
+    projectId: "runeskype-1111",
+    keyFilename: keyfile
+  });
+
+
+
+  var bucket = storage.bucket('images-111');
+  var localFilename = 'd4.png';
+  bucket.upload(localFilename, function(err, file) {
+    if (!err) {
+      console.log('somefile-inThisCaseASong.mp3 is now in your bucket.');
+    } else {
+      console.log('Error uploading file: ' + err);
+    }
+  });
 
 
 // // Create a root reference
