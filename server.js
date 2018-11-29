@@ -96,7 +96,7 @@ let Item = new Schema(
       {name: String, drdr: String, content: String }
   
 );
-Item = mongoose.model('Images', Item);
+let Item1 = mongoose.model('Images', Item);
 
 
 
@@ -144,7 +144,7 @@ db.on('error', console.error.bind(console, 'conn error:'));
 //  });
 
  app.post('/api/background/',function(req,res){
-  let newItem = new Item();
+  let newItem = new Item1();
   newItem.name = 'background'
   newItem.drdr = req.body.bgUrl
   newItem.content = req.body.bgUrl
@@ -152,7 +152,7 @@ db.on('error', console.error.bind(console, 'conn error:'));
  });
 
  app.post('/api/sprite/',function(req,res){
-  let newItem = new Item();
+  let newItem = new Item1();
   newItem.name = 'sprite'
   newItem.drdr = req.body.spriteUrl
   newItem.content = req.body.spriteUrl
@@ -160,7 +160,7 @@ db.on('error', console.error.bind(console, 'conn error:'));
  });
 
  app.post('/api/map/',function(req,res){
-  let newItem = new Item();
+  let newItem = new Item1();
   for (let key in newItem)
   newItem.name = 'map'
   newItem.drdr = req.body.mapUrl

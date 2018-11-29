@@ -37,7 +37,7 @@ export default class VideoComponent extends Component {
 		console.log("Joining room '" + this.state.roomName + "'...");
 		let connectOptions = {
 			name: this.state.roomName,
-			video: { width: 180 }
+			video: { width: 280 }
 		};
 
 		if (this.state.previewTracks) {
