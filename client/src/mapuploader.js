@@ -23,6 +23,9 @@ class MapUpload extends Component {
           $('#mapdiv').css('background-image', 'url(' + this.state.url + ')')
           let url = this.state.url;
           Axios.post('/api/map', url)
+          this.setState({
+              url : ''
+          })
       }
 
 

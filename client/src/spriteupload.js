@@ -23,6 +23,9 @@ class SpriteUpload extends Component {
           $('.dot').css('background-image', 'url(' + this.state.url + ')')
           let url = this.state.url;
           Axios.post('/api/sprite', url)
+          this.setState({
+            url : ''
+        })
       }
 
 

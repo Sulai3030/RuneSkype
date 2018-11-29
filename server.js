@@ -136,7 +136,7 @@ app.post('/image-upload/', (req, res) => {
  app.post('/api/background/',function(req,res){
   let newItem = new Item();
   newItem.img.name = 'background'
-  newItem.img.data = req.body.url
+  newItem.img.url = req.body.url
   newItem.img.contentType = 'url';
   newItem.save();
  });
@@ -144,7 +144,7 @@ app.post('/image-upload/', (req, res) => {
  app.post('/api/sprite/',function(req,res){
   let newItem = new Item();
   newItem.img.name = 'sprite'
-  newItem.img.data = req.body.url
+  newItem.img.url = req.body.url
   newItem.img.contentType = 'url';
   newItem.save();
  });
@@ -152,7 +152,7 @@ app.post('/image-upload/', (req, res) => {
  app.post('/api/map/',function(req,res){
   let newItem = new Item();
   newItem.img.name = 'map'
-  newItem.img.data = req.body.url
+  newItem.img.url = req.body.url
   newItem.img.contentType = 'url';
   newItem.save();
  });
