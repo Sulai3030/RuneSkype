@@ -22,7 +22,9 @@ class BackgroundUpload extends Component {
         event.preventDefault()
           $('body').css('background-image', 'url(' + this.state.url + ')')
           let url = this.state.url;
-          Axios.post('/api/background', url)
+          setTimeout(() => {
+            Axios.post('/api/map', url)
+          }, 1000)
           this.setState({
             url : ''
         })
