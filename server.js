@@ -35,10 +35,10 @@ if (process.env.NODE_ENV === "production") {
 // } else if(process.env.NODE_ENV === "PROD" || 'production' ||'prod') { // Configuration for production environment
 //   app.use(express.static("client/build"));
 // }
-app.use(function(req, res, next){
-  console.log("Request from: ", req.url);
-  next();
-})
+// app.use(function(req, res, next){
+//   console.log("Request from: ", req.url);
+//   next();
+// })
 
 // gs://runeskype-111.appspot.com
 
@@ -81,10 +81,10 @@ app.use(function(req, res, next){
 
 
 
-if (process.env.NODE_ENV === "production" || "prod") {
-  app.use(express.static("client/build"));
+// if (process.env.NODE_ENV === "production" || "prod") {
+//   app.use(express.static("client/build"));
 
-}
+// }
 
 let apiKey = process.env.API_KEY
 let sid = process.env.API_SID

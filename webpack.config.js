@@ -12,7 +12,7 @@ var configFunc = function(){
         ],
         output: {
             path: __dirname + "/client/build/static/js/",
-            filename: "main.00078c37.js",
+            filename: "bundle.js",
             publicPath: "/"
         },
         module: {

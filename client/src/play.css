@@ -58,17 +58,17 @@ body {
 }
 
 .other-user {
-    display: inline!important;
+    display: inline-block!important;
     margin: 0 !important;
     padding: 0 !important;
     float: left !important;
 }
 
 .self-user {
-    display: inline!important;
+    display: inline-block !important;
     margin: 0 !important;
     padding: 0 !important;
-    float: left !important;
+
 }
 
 .panel-video {
