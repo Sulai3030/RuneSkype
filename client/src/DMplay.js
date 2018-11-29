@@ -262,25 +262,19 @@ render( ) {
                               </div>
                           </a>
                       </li>
-                      <li className="divider"></li>
+                  
                       <li>
                           <a href="">
-                              <div>
-                                  <i className="fa fa-tasks fa-fw"></i> New Task
-                                  <span className="pull-right text-muted small">4 minutes ago</span>
-                              </div>
+                  
                           </a>
                       </li>
-                      <li className="divider"></li>
+                   
                       <li>
                           <a href="">
-                              <div>
-                                  <i className="fa fa-upload fa-fw"></i> Server Rebooted
-                                  <span className="pull-right text-muted small">4 minutes ago</span>
-                              </div>
+                  
                           </a>
                       </li>
-                      <li className="divider"></li>
+                    
                       <li>
                           <a className="text-center" href="">
                               <strong>See All Alerts</strong>

@@ -13,6 +13,7 @@ import DiceComponent from './dicecomponent';
 import BackgroundUpload from './textupload'
 import MapUpload from './mapuploader'
 import SpriteUpload from './spriteupload'
+import axios from 'axios';
 
 class Player extends Component {
 
@@ -63,7 +64,9 @@ class Player extends Component {
         // let chatData = database.ref("/chat");
         
 
-
+        setInterval(() => {
+            
+        }, 2000)
 
           // chatData.orderByChild("time").on("child_added", function(snapshot) {
 

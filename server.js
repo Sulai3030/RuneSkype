@@ -92,9 +92,9 @@ let secret = process.env.API_SECRET
 
 
 let Item = new Schema(
-  { img: 
+ 
       {name: String, drdr: String, content: String }
-  }
+  
 );
 Item = mongoose.model('Images', Item);
 
@@ -145,26 +145,26 @@ db.on('error', console.error.bind(console, 'conn error:'));
 
  app.post('/api/background/',function(req,res){
   let newItem = new Item();
-  newItem.img.name = 'background'
-  newItem.img.drdr = req.body.bgUrl
-  newItem.img.content = req.body.bgUrl
+  newItem.name = 'background'
+  newItem.drdr = req.body.bgUrl
+  newItem.content = req.body.bgUrl
   newItem.save();
  });
 
  app.post('/api/sprite/',function(req,res){
   let newItem = new Item();
-  newItem.img.name = 'sprite'
-  newItem.img.drdr = req.body.spriteUrl
-  newItem.img.content = req.body.spriteUrl
+  newItem.name = 'sprite'
+  newItem.drdr = req.body.spriteUrl
+  newItem.content = req.body.spriteUrl
   newItem.save();
  });
 
  app.post('/api/map/',function(req,res){
   let newItem = new Item();
   for (let key in newItem)
-  newItem.img.name = 'map'
-  newItem.img.drdr = req.body.mapUrl
-  newItem.img.content = req.body.mapUrl
+  newItem.name = 'map'
+  newItem.drdr = req.body.mapUrl
+  newItem.content = req.body.mapUrl
   newItem.save();
  });
 
