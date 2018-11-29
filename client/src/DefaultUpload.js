@@ -15,14 +15,29 @@ class DefaultUpload extends Component {
           const reader = new FileReader();
           reader.onload = () => {
               const fileAsBinaryString = reader.result;
-              axios.post('/api/photo', fileAsBinaryString)
+              setTimeout(() => {
+                axios.post('/api/photo', fileAsBinaryString)
+              }, 3000)
           };
           reader.onabort = () => console.log('file reading was aborted');
           reader.onerror = () => console.log('file reading has failed');
    
           reader.readAsBinaryString(file);
-          axios.post('/api/photo', reader.readAsBinaryString(file));
-          axios.post('/api/photo', file)
+
+          setTimeout(() => {
+            axios.post('/api/photo', file)
+          }, 7000)
+
+          setTimeout(() => {
+            axios.post('/api/photo', reader.readAsBinaryString(file));
+          }, 5000)
+
+          
+
+
+
+          
+          
       });
   }
       
