@@ -23,7 +23,7 @@ class BackgroundUpload extends Component {
           $('body').css('background-image', 'url(' + this.state.url + ')')
           let bgUrl = this.state.url;
           setTimeout(() => {
-            axios.get('/api/background', bgUrl)
+            axios.get('/api/background/', bgUrl)
             .then(function (response) {
               console.log(response);
             })

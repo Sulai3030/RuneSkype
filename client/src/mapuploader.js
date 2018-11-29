@@ -23,7 +23,7 @@ class MapUpload extends Component {
           $('#mapdiv').css('background-image', 'url(' + this.state.url + ')')
           let mapUrl = this.state.url;
           setTimeout(() => {
-            axios.get('/api/map', mapUrl)
+            axios.get('/api/map/', mapUrl)
             .then(function (response) {
               console.log(response);
             })

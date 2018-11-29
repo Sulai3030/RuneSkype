@@ -16,7 +16,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "JR",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
@@ -66,5 +66,5 @@
   "bugs": {
     "url": "https://github.com/Jroze88/RuneSkype/issues"
   },
-  "homepage": "http://."
+  "homepage": "https://github.com/Jroze88/runeskype.github.io#readme"
 }

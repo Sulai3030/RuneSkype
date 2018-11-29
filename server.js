@@ -60,20 +60,16 @@ app.use(express.json());
 // mountainsRef.name === mountainImagesRef.name            // true
 // mountainsRef.fullPath === mountainImagesRef.fullPath    // false
 
-if(process.env.NODE_ENV === "development") { // Configuration for development environment
-    var webpackDevMiddleware = require("webpack-dev-middleware");
-    var webpackConfig = require("./webpack.config.js");
-    const webpackCompiler = webpack(webpackConfig);
-    app.use(webpackDevMiddleware(webpackCompiler));
-    app.use(express.static(path.join(__dirname, "app")));
-} else if(process.env.NODE_ENV === "production") { // Configuration for production environment
-    app.use(express.static(path.join(__dirname, "dist")));
-}
-
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-
+// if(process.env.NODE_ENV === "development" || 'dev') { // Configuration for development environment
+//     var webpackDevMiddleware = require("webpack-dev-middleware");
+//     var webpackConfig = require("./webpack.config.js");
+//     const webpackCompiler = webpack(webpackConfig);
+//     app.use(webpackDevMiddleware(webpackCompiler));
+//     app.use(express.static(path.join(__dirname, "app")));
+// } else if(process.env.NODE_ENV === "production" || "prod") { // Configuration for production environment
+//     app.use(express.static(path.join(__dirname, "dist")));
 // }
+
 
 if (process.env.NODE_ENV === "production" || "prod") {
   app.use(express.static("client/build"));
@@ -141,7 +137,7 @@ db.on('error', console.error.bind(console, 'conn error:'));
   let newItem = new Item();
   newItem.img.name = 'background'
   newItem.img.drdr = req.body.bgUrl
-  newItem.img.content = req.body
+  newItem.img.content = req.body.bgUrl
   newItem.save();
  });
 
@@ -149,7 +145,7 @@ db.on('error', console.error.bind(console, 'conn error:'));
   let newItem = new Item();
   newItem.img.name = 'sprite'
   newItem.img.drdr = req.body.spriteUrl
-  newItem.img.content = req.body
+  newItem.img.content = req.body.spriteUrl
   newItem.save();
  });
 
@@ -157,7 +153,7 @@ db.on('error', console.error.bind(console, 'conn error:'));
   let newItem = new Item();
   newItem.img.name = 'map'
   newItem.img.drdr = req.body.mapUrl
-  newItem.img.content = req.body
+  newItem.img.content = req.body.mapUrl
   newItem.save();
  });
 
