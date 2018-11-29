@@ -10,6 +10,177 @@ import './play.css';
 
 class Play extends Component {
 
+    componentDidMount() {
+        $('#preloader').fadeOut('slow', function () {
+          $(this).remove();
+      });
+
+      let location = window.location;
+    
+      var MQL = 1170;
+    
+        //primary navigation slide-in effect
+        if ($(window).width() > MQL) {
+            var headerHeight = $('.cd-header').height();
+            $(window).on('scroll',
+                {
+                    previousTop: 0
+                },
+                function () {
+                    var currentTop = $(window).scrollTop();
+                    //check if user is scrolling up
+                    if (currentTop < this.previousTop) {
+                        //if scrolling up...
+                        if (currentTop > 0 && $('.cd-header').hasClass('is-fixed')) {
+                            $('.cd-header').addClass('is-visible');
+    
+                        } else {
+                            $('.cd-header').removeClass('is-visible is-fixed');
+                        }
+                    } else {
+                        //if scrolling down...
+                        $('.cd-header').removeClass('is-visible');
+                        if (currentTop > headerHeight && !$('.cd-header').hasClass('is-fixed')) $('.cd-header').addClass('is-fixed');
+                    }
+                    this.previousTop = currentTop;
+                });
+        }
+         /* --------------------------------
+         open/close primary navigation
+         -------------------------------- */
+    
+        // $('.cd-primary-nav li a').smoothScroll();
+    
+    
+        $('.cd-primary-nav-trigger').on('click', function () {
+            $('.cd-menu-icon').toggleClass('is-clicked');
+            $('.cd-header').toggleClass('menu-is-open');
+    
+            //in firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+            if ($('.cd-primary-nav').hasClass('is-visible')) {
+                $('.cd-primary-nav').removeClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                    $('body').removeClass('overflow-hidden');
+                });
+            } else {
+                $('.cd-primary-nav').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                    $('body').addClass('overflow-hidden');
+                    console.log("adding visible");
+                });
+            }
+        });
+    
+        $('.cd-primary-nav li a').on('click', function () {
+            if ($('.cd-primary-nav').hasClass('is-visible')) {
+                $('.cd-menu-icon').toggleClass('is-clicked');
+                $('.cd-header').toggleClass('menu-is-open');
+    
+                $('.cd-primary-nav').removeClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                    $('body').removeClass('overflow-hidden');
+                });
+            }
+        });
+         //Clear subscription form input field
+         function clearSubsForm(ev) {
+            if (ev.result === 'success') {
+                $("#mc-email").val('');
+            }
+        }
+    
+        //Clear subscription form input field
+        function clearLeadSubsForm(ev) {
+            if (ev.result === 'success') {
+                $("#mc-email").val('');
+                $("#mc-name").val('');
+                $("#mc-message").val('');
+            }
+        }
+            
+        $('.footer-nav-inner').on('click', function () {
+            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    
+         /*----------------------------------------------------*/
+        /*  Contact Form Section
+         /*----------------------------------------------------*/
+         $("#contact-form").on('submit', function (e) {
+            e.preventDefault();
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var text = $("#message").val();
+            var dataString = 'name=' + name + '&email=' + email + '&text=' + text;
+    
+    
+            function isValidEmail(emailAddress) {
+                var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+                return pattern.test(emailAddress);
+            };
+    
+            if (isValidEmail(email) && (text.length > 100) && (name.length > 1)) {
+                $.ajax({
+                    type: "POST",
+                    url: "ajax/process.php",
+                    data: dataString,
+                    success: function () {
+                        $('.success').fadeIn(1000).delay(3000).fadeOut(1000);
+                        $('#contact-form')[0].reset();
+                    }
+                });
+            } else {
+                $('.error').fadeIn(1000).delay(5000).fadeOut(1000);
+    
+            }
+    
+            return false;
+        });
+    
+      /*----------------------------------------------------*/
+        /*  Input field animation
+         /*----------------------------------------------------*/
+    
+         (function () {
+            // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+            if (!String.prototype.trim) {
+                (function () {
+                    // Make sure we trim BOM and NBSP
+                    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                    String.prototype.trim = function () {
+                        return this.replace(rtrim, '');
+                    };
+                })();
+            }
+    
+            [].slice.call(document.querySelectorAll('input.input__field, textarea.input__field')).forEach(function (inputEl) {
+                // in case the input is already filled..
+                if (inputEl.value.trim() !== '') {
+                   inputEl.parentNode.addClass('input--filled');
+                }
+    
+                // events:
+                inputEl.addEventListener('focus', onInputFocus);
+                inputEl.addEventListener('blur', onInputBlur);
+            });
+    
+            function onInputFocus(ev) {
+                ev.target.parentNode.addClass('input--filled');
+            }
+    
+            function onInputBlur(ev) {
+                if (ev.target.value.trim() === '') {
+                    ev.target.parentNode.removeClass('input--filled');
+                }
+            }
+        })();
+    
+    }
     state = {
         chat : "",
         roll : "d0",
