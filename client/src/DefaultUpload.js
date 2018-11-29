@@ -1,51 +1,64 @@
-import React from 'react';
-import DropzoneComponent from 'react-dropzone-component';
+import React, {Component} from 'react'
+import Dropzone from 'react-dropzone'
 
-export default class DefaultUpload extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.djsConfig = {
-            addRemoveLinks: true,
-            acceptedFiles: "image/jpeg,image/png,image/gif"
-        };
-
-        this.componentConfig = {
-            iconFiletypes: ['.jpg', '.png', '.gif'],
-            showFiletypeIcon: true,
-            postUrl: '/image-upload'
-        };
-
-        // If you want to attach multiple callbacks, simply
-        // create an array filled with all your callbacks.
-        this.callbackArray = [() => console.log('Hi!'), () => console.log('Ho!')];
-
-        // Simple callbacks work too, of course
-        this.callback = () => console.log('Hello!');
-
-        this.success = file => console.log('uploaded', file);
-
-        this.progress = file => console.log('progress', file);
-
-        this.removedfile = file => console.log('removing...', file);
-
-        this.dropzone = null;
+class DefaultUpload extends Component {
+    constructor() {
+      super()
+      this.state = { files: [] }
     }
 
+
+      setBackgroundImage(files){
+        
+    
+          // var reader = new FileReader();
+    
+          // reader.onload = function (files) {
+            document.body.style.backgroundImage = 'url(' + files + ')';
+          // };
+    
+          // reader.readAsDataURL(files);
+      
+      }
+
+
+  
+    onDrop(files) {
+      this.setState({
+        files
+      });
+      this.setBackgroundImage(files)
+    }
+  
+    onCancel() {
+      this.setState({
+        files: []
+      });
+    }
+  
     render() {
-        const config = this.componentConfig;
-        const djsConfig = this.djsConfig;
-
-        // For a list of all possible events (there are many), see README.md!
-        const eventHandlers = {
-            init: dz => this.dropzone = dz,
-            drop: this.callbackArray,
-            addedfile: this.callback,
-            success: this.success,
-            removedfile: this.removedfile,
-            uploadprogress: this.progress
-        }
-
-        return <DropzoneComponent config={config} eventHandlers={eventHandlers} djsConfig={djsConfig} />
+      return (
+        <section>
+          <div style={{backgroundImage : `url('${this.state.files}')`}} className="dropzone">
+            <Dropzone
+              onDrop={this.onDrop.bind(this)}
+              onFileDialogCancel={this.onCancel.bind(this)}
+            >
+              <p>Try dropping some files here, or click to select files to upload.</p>
+            </Dropzone>
+          </div>
+          <aside>
+            <h2>Dropped files</h2>
+            <ul>
+              {
+                this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+              }
+            </ul>
+          </aside>
+        </section>
+      );
     }
-}
+  }
+  
+export default DefaultUpload

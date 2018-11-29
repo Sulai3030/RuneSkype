@@ -6,9 +6,7 @@
     background-repeat: no-repeat;
 }
 
-    area {
-        z-index: 2;
-    }
+
 
     .dot {
         position: absolute;
@@ -48,5 +46,17 @@
 .map-panel {
     height: 100%;
     width: 100%;
+    overflow: hidden;
+}
+
+#mapcontainer {
+    width: 400px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.otherbox {
+    width: 400px;
+    height: 350px;
     overflow: hidden;
 }

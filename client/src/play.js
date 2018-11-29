@@ -7,6 +7,8 @@ import MapComponent from './Mapcomponent'
 import './components/metisMenu.css';
 import './components/sb-admin-2.css';
 import './play.css';
+import DefaultUpload from './DefaultUpload';
+
 
 class Play extends Component {
 
@@ -15,6 +17,8 @@ class Play extends Component {
         roll : "d0",
         rollResult: ""
     }
+
+
 
     diceRoller = event => {
 
@@ -401,6 +405,7 @@ render( ) {
                               <li className=" panelnav-item active"><a href="#home-pills" data-toggle="tab">Home</a>
                               </li>
                               <li className='panelnav-item' ><a href="#profile-pills" data-toggle="tab">Profile</a>
+                              
                               </li>
                               <li className='panelnav-item' ><a href="#messages-pills" data-toggle="tab">Messages</a>
                               </li>
@@ -411,13 +416,14 @@ render( ) {
                       {/* <!-- /.panel-heading --> */}
                       <div className="panel-body">
                           {/* <!-- Nav tabs --> */}
-                          
+                          <DefaultUpload />
 
                           {/* <!-- Tab panes --> */}
                           <div className="tab-content">
                               <div className="tab-pane fade in active" id="home">
                                   </div>
                               <div className="tab-pane fade" id="profile">
+                              
                                   </div>
                               <div className="tab-pane fade" id="messages">
                                   </div>

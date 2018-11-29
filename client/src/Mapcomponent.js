@@ -30,9 +30,6 @@ export default class MapComponent extends Component {
       }
   }
 
-  componentDidMount() {
-
-  }
 
   render() {
     
@@ -42,7 +39,7 @@ export default class MapComponent extends Component {
 
       
             
-   
+    
             <div id='mapcontainer'>
 
                   <Icon /> 
@@ -52,7 +49,7 @@ export default class MapComponent extends Component {
         </div>
       </Draggable>
           </div>
-       
+   
 
 
        )
