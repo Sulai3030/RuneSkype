@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import Message from './Message';
 import firebase from 'firebase';
 export default class ChatStuff extends Component {
   constructor(props) {

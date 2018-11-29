@@ -75,42 +75,99 @@
 }
 
 .chattext {
-  background-color: white;
-  color: black;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
 }
 
 .dice {
-  background-color: rgb(0, 0, 0);
   width: 100%;
   height: 100%;
-  padding: 10px;
+
 }
 
 .diceresults {
   position: absolute;
-  width: 45%;
-  height: 95%;
+  width: 50%;
+  height: 60%;
+  right: 0;
   margin: 0;
   display: inline-block;
   text-align: center;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   color: white;
+  vertical-align: center;
+  font-size: 4em;
+  background-color: rgba(240, 248, 255, 0) !important;
+  
+}
 
+.dicebuttons {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  margin: 0;
+  display: inline-block;
+  top: 0;
 }
 
 .rollbtn {
   float: left;
-  width: 80px;
-  height: 30px;
+  width: 28%;
+  height: 38%;
   font-size: 1em;
   padding: 10px;
   overflow: hidden;
   margin: 5px;
 }
 
-center {
- position:relative;
-  left: -10%;
- top: 30%; 
+
+
+center > p {
+  font-size: 3em;
 }
+
+#home-pills {
+  width: 100%;
+  Height: 100%;
+}
+
+button.punch {
+  border-top: 1px solid #38538c;
+  border-right: 1px solid #1f2d4d;
+  border-bottom: 1px solid #151e33;
+  border-left: 1px solid #1f2d4d;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+  box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+  color: #fff;
+  font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+  margin-bottom: 50px;
+  padding: 10px 0 12px 0;
+  text-align: center;
+}
+  button.punch:hover {
+    -webkit-box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    cursor: pointer; }
+
+
+    ::-webkit-scrollbar {
+      width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+  }

@@ -3,6 +3,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-image: url('/resources/backgroundmap.jpg')
 }
 
 .index-gym {
@@ -92,4 +93,29 @@ vertical-align: middle;
     position: relative;
     vertical-align: middle;
 }
+
+
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.568);
+    border: none;
+}
+
+.dropdown {
+    background-color: rgba(128, 128, 128, 0);
+    color: white;
+}
+
+i {
+    color: white;
+}
+
+.panel {
+    background-color: rgba(0, 0, 0, 0.664);
+}
+
+.chatpaneltext {
+    background-color: black;
+}
+
 

@@ -141,18 +141,18 @@ render( ) {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="index.html">SB Admin v2.0</a>
+ 
           </div>
           {/* <!-- /.navbar-header --> */}
 
           <ul className="nav navbar-top-links navbar-right">
               <li className="dropdown">
-                  <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <a className="dropdown-toggle" data-toggle="dropdown" href="">
                       <i className="fa fa-envelope fa-fw"></i> <i className="fa fa-caret-down"></i>
                   </a>
                   <ul className="dropdown-menu dropdown-messages">
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <strong>John Smith</strong>
                                   <span className="pull-right text-muted">
@@ -164,7 +164,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <strong>John Smith</strong>
                                   <span className="pull-right text-muted">
@@ -176,7 +176,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <strong>John Smith</strong>
                                   <span className="pull-right text-muted">
@@ -188,7 +188,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a className="text-center" href="#">
+                          <a className="text-center" href="">
                               <strong>Read All Messages</strong>
                               <i className="fa fa-angle-right"></i>
                           </a>
@@ -198,12 +198,12 @@ render( ) {
               </li>
               {/* <!-- /.dropdown --> */}
               <li className="dropdown">
-                  <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <a className="dropdown-toggle" data-toggle="dropdown" href="">
                       <i className="fa fa-tasks fa-fw"></i> <i className="fa fa-caret-down"></i>
                   </a>
                   <ul className="dropdown-menu dropdown-tasks">
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <p>
                                       <strong>Task 1</strong>
@@ -219,7 +219,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <p>
                                       <strong>Task 2</strong>
@@ -235,7 +235,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <p>
                                       <strong>Task 3</strong>
@@ -251,7 +251,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <p>
                                       <strong>Task 4</strong>
@@ -267,7 +267,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a className="text-center" href="#">
+                          <a className="text-center" href="">
                               <strong>See All Tasks</strong>
                               <i className="fa fa-angle-right"></i>
                           </a>
@@ -277,12 +277,12 @@ render( ) {
               </li>
               {/* <!-- /.dropdown --> */}
               <li className="dropdown">
-                  <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <a className="dropdown-toggle" data-toggle="dropdown" href="">
                       <i className="fa fa-bell fa-fw"></i> <i className="fa fa-caret-down"></i>
                   </a>
                   <ul className="dropdown-menu dropdown-alerts">
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <i className="fa fa-comment fa-fw"></i> New Comment
                                   <span className="pull-right text-muted small">4 minutes ago</span>
@@ -291,7 +291,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <i className="fa fa-twitter fa-fw"></i> 3 New Followers
                                   <span className="pull-right text-muted small">12 minutes ago</span>
@@ -300,7 +300,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <i className="fa fa-envelope fa-fw"></i> Message Sent
                                   <span className="pull-right text-muted small">4 minutes ago</span>
@@ -309,7 +309,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <i className="fa fa-tasks fa-fw"></i> New Task
                                   <span className="pull-right text-muted small">4 minutes ago</span>
@@ -318,7 +318,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a href="#">
+                          <a href="">
                               <div>
                                   <i className="fa fa-upload fa-fw"></i> Server Rebooted
                                   <span className="pull-right text-muted small">4 minutes ago</span>
@@ -327,7 +327,7 @@ render( ) {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <a className="text-center" href="#">
+                          <a className="text-center" href="">
                               <strong>See All Alerts</strong>
                               <i className="fa fa-angle-right"></i>
                           </a>
@@ -337,13 +337,13 @@ render( ) {
               </li>
               {/* <!-- /.dropdown --> */}
               <li className="dropdown">
-                  <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <a className="dropdown-toggle" data-toggle="dropdown" href="">
                       <i className="fa fa-user fa-fw"></i> <i className="fa fa-caret-down"></i>
                   </a>
                   <ul className="dropdown-menu dropdown-user">
-                      <li><a href="#"><i className="fa fa-user fa-fw"></i> User Profile</a>
+                      <li><a href=""><i className="fa fa-user fa-fw"></i> User Profile</a>
                       </li>
-                      <li><a href="#"><i className="fa fa-gear fa-fw"></i> Settings</a>
+                      <li><a href=""><i className="fa fa-gear fa-fw"></i> Settings</a>
                       </li>
                       <li className="divider"></li>
                       <li><a href="login.html"><i className="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -397,7 +397,7 @@ render( ) {
           </div>
           <div className="row secondrow">
               <div className="col-lg-6">
-                  <div className="panel panel-default">
+                  <div className="panel chatpaneltext panel-default">
                       <div className="panel-heading">
   <ul className="nav nav-pills">
                               <li className=" panelnav-item active"><a href="#home-pills" data-toggle="tab">Chat</a>
@@ -459,19 +459,19 @@ render( ) {
 
                           {/* <!-- Tab panes --> */}
                           <div className="tab-content">
-                              <div className="tab-pane fade in active" id="home-pills">
-                              <div className='dice'>
+                              <div className="tab-pane fade in active dice" id="home-pills">
+                           
                     <div className='dicebuttons'>
-                    <button type="button" data="d4" className="btn rollbtn btn-primary" onClick={(e) => this.diceRoller(e)}>D4</button>
-                            <button type="button" data="d6" className="btn rollbtn btn-secondary" onClick={(e) => this.diceRoller(e)}>D6</button>
-                            <button type="button" data="d8" className="btn rollbtn btn-success" onClick={(e) => this.diceRoller(e)}>D8</button>
-                            <button type="button" data="d10" className="btn rollbtn btn-danger" onClick={(e) => this.diceRoller(e)}>D10</button>
-                            <button type="button" data="d12" className="btn rollbtn btn-warning" onClick={(e) => this.diceRoller(e)}>D12</button>
-                            <button type="button" data="d20" className="btn rollbtn btn-info" onClick={(e) => this.diceRoller(e)}>D20</button></div>
-                    <span className='diceresults' style={{backgroundImage : `url(./resources/${this.state.roll}.png)` }}>
-                    <center><p>{this.state.rollResult}</p></center>
+                    <button type="button" data="d4" className=" rollbtn punch btn-primary" onClick={(e) => this.diceRoller(e)}>D4</button>
+                            <button type="button" data="d6" className=" rollbtn punch btn-secondary" onClick={(e) => this.diceRoller(e)}>D6</button>
+                            <button type="button" data="d8" className=" rollbtn punch btn-success" onClick={(e) => this.diceRoller(e)}>D8</button>
+                            <button type="button" data="d10" className=" rollbtn punch btn-danger" onClick={(e) => this.diceRoller(e)}>D10</button>
+                            <button type="button" data="d12" className=" rollbtn punch btn-warning" onClick={(e) => this.diceRoller(e)}>D12</button>
+                            <button type="button" data="d20" className=" rollbtn punch btn-info" onClick={(e) => this.diceRoller(e)}>D20</button></div>
+                    <span className='diceresults center' style={{backgroundImage : `url(./resources/${this.state.roll}.png)` }}>
+                    {this.state.rollResult}
                     </span>
-                    </div>
+           
                                   </div>
                               <div className="tab-pane fade" id="profile-pills">
                                  </div>
