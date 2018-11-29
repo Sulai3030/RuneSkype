@@ -14,8 +14,8 @@ const Schema = mongoose.Schema;
 
 
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
 
 
@@ -60,15 +60,11 @@ app.use(express.json());
 // mountainsRef.name === mountainImagesRef.name            // true
 // mountainsRef.fullPath === mountainImagesRef.fullPath    // false
 
-// if(process.env.NODE_ENV === "development" || 'dev') { // Configuration for development environment
-//     var webpackDevMiddleware = require("webpack-dev-middleware");
-//     var webpackConfig = require("./webpack.config.js");
-//     const webpackCompiler = webpack(webpackConfig);
-//     app.use(webpackDevMiddleware(webpackCompiler));
-//     app.use(express.static(path.join(__dirname, "app")));
-// } else if(process.env.NODE_ENV === "production" || "prod") { // Configuration for production environment
-//     app.use(express.static(path.join(__dirname, "dist")));
-// }
+if(process.env.NODE_ENV === "development" || 'dev') { // Configuration for development environment
+
+} else if(process.env.NODE_ENV === "production" || "prod") { // Configuration for production environment
+    app.use(express.static(path.join(__dirname, "dist")));
+}
 
 
 if (process.env.NODE_ENV === "production" || "prod") {
