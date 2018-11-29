@@ -338,35 +338,6 @@ class Play extends Component {
     }
 
 
-    componentDidMount() {
-    
-        // let database = firebase.database();
-        // let chatData = database.ref("/chat");
-        
-
-
-
-          // chatData.orderByChild("time").on("child_added", function(snapshot) {
-
-          //   // If idNum is 0, then its a disconnect message and displays accordingly
-          //   // If not - its a user chat message
-          //   if (snapshot.val().idNum === 0) {
-          //     $("#chat-messages").append("<p className=player" + snapshot.val().idNum + "><span>"
-          //     + snapshot.val().name + "</span>: " + snapshot.val().message + "</p>");
-          //   }
-          //   else {
-          //     $("#chat-messages").append("<p className=player" + snapshot.val().idNum + "><span>"
-          //     + snapshot.val().name + "</span>: " + snapshot.val().message + "</p>");
-          //   }
-          
-          //   // Keeps div scrolled to bottom on each update.
-          //   $("#chat-messages").scrollTop($("#chat-messages")[0].scrollHeight);
-          // });
-
-
-
-    }
-
 
 
 render( ) {
