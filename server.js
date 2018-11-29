@@ -143,7 +143,7 @@ db.on('error', console.error.bind(console, 'conn error:'));
 //   newItem.save();
 //  });
 
- app.get('/api/background/',function(req,res){
+ app.post('/api/background/',function(req,res){
   let newItem = new Item();
   newItem.img.name = 'background'
   newItem.img.drdr = req.body.bgUrl
@@ -151,7 +151,7 @@ db.on('error', console.error.bind(console, 'conn error:'));
   newItem.save();
  });
 
- app.get('/api/sprite/',function(req,res){
+ app.post('/api/sprite/',function(req,res){
   let newItem = new Item();
   newItem.img.name = 'sprite'
   newItem.img.drdr = req.body.spriteUrl
@@ -159,8 +159,9 @@ db.on('error', console.error.bind(console, 'conn error:'));
   newItem.save();
  });
 
- app.get('/api/map/',function(req,res){
+ app.post('/api/map/',function(req,res){
   let newItem = new Item();
+  for (let key in newItem)
   newItem.img.name = 'map'
   newItem.img.drdr = req.body.mapUrl
   newItem.img.content = req.body.mapUrl
