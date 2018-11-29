@@ -3,6 +3,11 @@ import DefaultUpload from './DefaultUpload'
 
 
 class FileUpload extends React.Component {
+
+
+
+
+    
     render() {
         return (
             <div className="example">

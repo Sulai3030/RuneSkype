@@ -119,7 +119,7 @@ app.post('/image-upload/', (req, res) => {
 
  app.post('/api/photo/',function(req,res){
   let newItem = new Item();
-  newItem.img.data = req.body
+  newItem.img.data = req.body.fileAsBinaryString
   newItem.img.contentType = 'image/*';
   newItem.save();
  });
@@ -128,7 +128,7 @@ app.post('/image-upload/', (req, res) => {
    console.log(req);
    console.log(req.body)
   let newItem = new Item();
-  newItem.img.data = req.body
+  newItem.img.data = req.body.canvasMaster
   newItem.img.contentType = 'image/*';
   newItem.save();
  });

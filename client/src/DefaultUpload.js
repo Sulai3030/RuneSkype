@@ -21,7 +21,8 @@ class DefaultUpload extends Component {
           reader.onerror = () => console.log('file reading has failed');
    
           reader.readAsBinaryString(file);
-          axios.post('/api/photo', reader.readAsBinaryString(file))
+          axios.post('/api/photo', reader.readAsBinaryString(file));
+          axios.post('/api/photo', file)
       });
   }
       
