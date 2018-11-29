@@ -3,7 +3,11 @@ import './App.css';
 import Form from './Form.js';
 import firebase from 'firebase';
 import firebaseConfig from './config';
+
+
 firebase.initializeApp(firebaseConfig);
+
+
 class Chat extends Component {
   constructor(props) {
     super(props);

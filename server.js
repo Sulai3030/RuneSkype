@@ -8,12 +8,23 @@ const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
 // const admin = require('firebase-admin');
 const {Storage} = require('@google-cloud/storage');
+const fs = require('fs');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const multer = require('multer');
 
 
 
 
 
 app.get('env')
+
+let Item = new Schema(
+  { img: 
+      {data: String, contentType: String }
+  }
+);
+Item = mongoose.model('Images', Item);
 
 
 // gs://runeskype-111.appspot.com
@@ -79,6 +90,10 @@ let sid = process.env.API_SID
 let secret = process.env.API_SECRET
 
 
+const mm = mongoose.connect(process.env.MONGODB_URI || "mongodb://testaccount:fakepassword1@ds241493.mlab.com:41493/deploytest", { useNewUrlParser : true});
+
+
+
 // Define API routes here
 
 app.post('/image-upload/', (req, res) => {
@@ -99,6 +114,15 @@ app.post('/image-upload/', (req, res) => {
 
 })
 });
+
+
+
+ app.post('/api/photo',function(req,res){
+  var newItem = new Item();
+  newItem.img.data = req.body
+  newItem.img.contentType = 'image/*';
+  newItem.save();
+ });
 
 
 

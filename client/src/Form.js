@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
 import Message from './Message';
 import firebase from 'firebase';
+
+
 export default class Form extends Component {
   constructor(props) {
     super(props);
@@ -18,23 +19,11 @@ export default class Form extends Component {
       this.setState({'userName': nextProps.user.displayName});
     }
   }
+
   handleChange(event) {
     this.setState({message: event.target.value});
   }
-  handleSend() {
-    if (this.state.message) {
-      var newItem = {
-        userName: this.state.userName,
-        message: this.state.message,
-      }
-      this.messageRef.push(newItem);
-      this.setState({ message: '' });
-    }
-  }
-  handleKeyPress(event) {
-    if (event.key !== 'Enter') return;
-    this.handleSend();
-  }
+
   listenMessages() {
     this.messageRef
       .limitToLast(10)

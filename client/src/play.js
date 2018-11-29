@@ -9,59 +9,16 @@ import './components/sb-admin-2.css';
 import './play.css';
 import Chat from './Chat'
 import ChatStuff from './ChatStuff'
+import DiceComponent from './dicecomponent';
 
 class Play extends Component {
 
     state = {
         chat : "",
-        roll : "d0",
-        rollResult: ""
+
     }
 
-    diceRoller = event => {
-
-      let chance = new Chance();
-    
-      let rollresult = 0;
-
-      let rollType = $(event.target).attr('data');
-      this.setState({
-        roll: rollType
-      });
-
-      switch (rollType) {
-        case "d4":
-        rollresult = chance.d4()
-        break;
-        case "d6":
-        rollresult = chance.d6()
-        break;
-        case "d8":
-        rollresult = chance.d8()
-        break;
-        case "d10":
-        rollresult = chance.d10()
-        break;
-        case "d12":
-        rollresult = chance.d12()
-        break;
-        case "d20":
-        rollresult = chance.d20()
-        break;
-        default:
-        rollresult = 0;
-      }
-
-
-      console.log(rollresult)
-
-      this.setState({
-        rollResult : rollresult
-      })
-
-
-    
-    }
+   
 
     handleInputChange = event => {
 
@@ -459,20 +416,7 @@ render( ) {
 
                           {/* <!-- Tab panes --> */}
                           <div className="tab-content">
-                              <div className="tab-pane fade in active dice" id="home-pills">
-                           
-                    <div className='dicebuttons'>
-                    <button type="button" data="d4" className=" rollbtn punch btn-primary" onClick={(e) => this.diceRoller(e)}>D4</button>
-                            <button type="button" data="d6" className=" rollbtn punch btn-secondary" onClick={(e) => this.diceRoller(e)}>D6</button>
-                            <button type="button" data="d8" className=" rollbtn punch btn-success" onClick={(e) => this.diceRoller(e)}>D8</button>
-                            <button type="button" data="d10" className=" rollbtn punch btn-danger" onClick={(e) => this.diceRoller(e)}>D10</button>
-                            <button type="button" data="d12" className=" rollbtn punch btn-warning" onClick={(e) => this.diceRoller(e)}>D12</button>
-                            <button type="button" data="d20" className=" rollbtn punch btn-info" onClick={(e) => this.diceRoller(e)}>D20</button></div>
-                    <span className='diceresults center' style={{backgroundImage : `url(./resources/${this.state.roll}.png)` }}>
-                    {this.state.rollResult}
-                    </span>
-           
-                                  </div>
+                              <DiceComponent />
                               <div className="tab-pane fade" id="profile-pills">
                                  </div>
                               <div className="tab-pane fade" id="messages-pills">

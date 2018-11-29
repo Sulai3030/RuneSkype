@@ -6,6 +6,7 @@ import Play from './play'
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import FileUpload from './uploadtest';
 import Chat from './Chat'
+import CanvasTest from './canvastest'
 
 
 
@@ -21,7 +22,8 @@ class App extends Component {
             {/* <Route exact path='/boardpage' component={BoardPage} /> */}
             <Route exact path ='/uploadtest' component={FileUpload} />
             <Route exact path ='/chat' component={Chat} />
-
+            <Route exact path ='/canvastest' component={CanvasTest} />
+            
           </div>
         </Router>
     

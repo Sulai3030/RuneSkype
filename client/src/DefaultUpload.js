@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import Dropzone from 'react-dropzone'
+import $ from 'jquery'
+import axios from 'axios'
 
 
 class DefaultUpload extends Component {
@@ -8,57 +10,43 @@ class DefaultUpload extends Component {
       this.state = { files: [] }
     }
 
-
-      setBackgroundImage(files){
-        
-    
-          // var reader = new FileReader();
-    
-          // reader.onload = function (files) {
-            document.body.style.backgroundImage = 'url(' + files + ')';
-          // };
-    
-          // reader.readAsDataURL(files);
-      
-      }
-
-
-  
-    onDrop(files) {
-      this.setState({
-        files
+    onDrop= acceptedFiles => {
+      acceptedFiles.forEach(file => {
+          const reader = new FileReader();
+          reader.onload = () => {
+              const fileAsBinaryString = reader.result;
+              axios.post('/api/upload', fileAsBinaryString)
+          };
+          reader.onabort = () => console.log('file reading was aborted');
+          reader.onerror = () => console.log('file reading has failed');
+   
+          reader.readAsBinaryString(file);
       });
-      this.setBackgroundImage(files)
-    }
-  
-    onCancel() {
-      this.setState({
-        files: []
-      });
-    }
-  
-    render() {
-      return (
-        <section>
-          <div style={{backgroundImage : `url('${this.state.files}')`}} className="dropzone">
-            <Dropzone
-              onDrop={this.onDrop.bind(this)}
-              onFileDialogCancel={this.onCancel.bind(this)}
-            >
-              <p>Try dropping some files here, or click to select files to upload.</p>
-            </Dropzone>
-          </div>
-          <aside>
-            <h2>Dropped files</h2>
-            <ul>
-              {
-                this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
-              }
-            </ul>
-          </aside>
-        </section>
-      );
-    }
   }
+      
+  
+  render() {
+    return (
+      <section>
+        <div className="dropzone">
+          <Dropzone
+            onDrop={this.onDrop.bind(this)}
+            
+          >
+            <p>Try dropping some files here, or click to select files to upload.</p>
+          </Dropzone>
+        </div>
+        <aside>
+          <h2>Dropped files</h2>
+          <ul>
+            {
+              this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+            }
+          </ul>
+        </aside>
+      </section>
+    );
+  }
+}
   
 export default DefaultUpload
