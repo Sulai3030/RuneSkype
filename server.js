@@ -31,7 +31,7 @@ app.get('env')
 
 
   const bucketName = 'images-111'
-  const keyfile = JSON.stringify(process.env.GCLOUD) || (path.join(__dirname, "gcloud.json"))
+  const keyfile = JSON.parse(process.env.GCLOUD)
  
   const storage = new Storage({
     projectId: "runeskype-1111",

@@ -7,8 +7,8 @@ import MapComponent from './Mapcomponent'
 import './components/metisMenu.css';
 import './components/sb-admin-2.css';
 import './play.css';
-import DefaultUpload from './DefaultUpload';
-
+import Chat from './Chat'
+import ChatStuff from './ChatStuff'
 
 class Play extends Component {
 
@@ -17,8 +17,6 @@ class Play extends Component {
         roll : "d0",
         rollResult: ""
     }
-
-
 
     diceRoller = event => {
 
@@ -402,7 +400,7 @@ render( ) {
                   <div className="panel panel-default">
                       <div className="panel-heading">
   <ul className="nav nav-pills">
-                              <li className=" panelnav-item active"><a href="#home-pills" data-toggle="tab">Home</a>
+                              <li className=" panelnav-item active"><a href="#home-pills" data-toggle="tab">Chat</a>
                               </li>
                               <li className='panelnav-item' ><a href="#profile-pills" data-toggle="tab">Profile</a>
                               
@@ -414,14 +412,18 @@ render( ) {
                           </ul>
                       </div>
                       {/* <!-- /.panel-heading --> */}
-                      <div className="panel-body">
+                      <div className="panel-body ">
                           {/* <!-- Nav tabs --> */}
-                          <DefaultUpload />
+                         
 
                           {/* <!-- Tab panes --> */}
                           <div className="tab-content">
-                              <div className="tab-pane fade in active" id="home">
+                              <div className="tab-pane fade in chatpane active" id="home">
+                           
+                              <Chat />
+
                                   </div>
+                                  <ChatStuff />
                               <div className="tab-pane fade" id="profile">
                               
                                   </div>
@@ -458,6 +460,18 @@ render( ) {
                           {/* <!-- Tab panes --> */}
                           <div className="tab-content">
                               <div className="tab-pane fade in active" id="home-pills">
+                              <div className='dice'>
+                    <div className='dicebuttons'>
+                    <button type="button" data="d4" className="btn rollbtn btn-primary" onClick={(e) => this.diceRoller(e)}>D4</button>
+                            <button type="button" data="d6" className="btn rollbtn btn-secondary" onClick={(e) => this.diceRoller(e)}>D6</button>
+                            <button type="button" data="d8" className="btn rollbtn btn-success" onClick={(e) => this.diceRoller(e)}>D8</button>
+                            <button type="button" data="d10" className="btn rollbtn btn-danger" onClick={(e) => this.diceRoller(e)}>D10</button>
+                            <button type="button" data="d12" className="btn rollbtn btn-warning" onClick={(e) => this.diceRoller(e)}>D12</button>
+                            <button type="button" data="d20" className="btn rollbtn btn-info" onClick={(e) => this.diceRoller(e)}>D20</button></div>
+                    <span className='diceresults' style={{backgroundImage : `url(./resources/${this.state.roll}.png)` }}>
+                    <center><p>{this.state.rollResult}</p></center>
+                    </span>
+                    </div>
                                   </div>
                               <div className="tab-pane fade" id="profile-pills">
                                  </div>
