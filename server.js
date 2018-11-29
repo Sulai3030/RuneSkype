@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+let webpack = require("webpack");
 const app = express();
 const faker = require("faker");
 const AccessToken = require("twilio").jwt.AccessToken;
@@ -11,27 +12,33 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
-if(process.env.NODE_ENV === "DEV" || 'development' || 'dev') { // Configuration for development environment
-    var webpackDevMiddleware = require("webpack-dev-middleware");
-    var webpackHotMiddleware = require("webpack-hot-middleware");
-    var webpackConfig = require("./webpack.config.js");
-    const webpackCompiler = webpack(webpackConfig);
-    app.use(webpackDevMiddleware(webpackCompiler, {
-      hot: true
-    }));
-    app.use(webpackHotMiddleware(webpackCompiler));
-    app.use(express.static(path.join(__dirname, "client/src")));
-} else if(process.env.NODE_ENV === "PROD" || 'production' ||'prod') { // Configuration for production environment
+if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+
 }
 
+
+
+// if(process.env.NODE_ENV === "DEV" || 'development' || 'dev') { // Configuration for development environment
+//     var webpackDevMiddleware = require("webpack-dev-middleware");
+//     var webpackHotMiddleware = require("webpack-hot-middleware");
+//     var webpackConfig = require("./webpack.config.js");
+//     const webpackCompiler = webpack(webpackConfig);
+//     app.use(webpackDevMiddleware(webpackCompiler, {
+//       hot: true
+//     }));
+//     app.use(webpackHotMiddleware(webpackCompiler));
+//     app.use(express.static(path.join(__dirname, "client/src")));
+// } else if(process.env.NODE_ENV === "PROD" || 'production' ||'prod') { // Configuration for production environment
+//   app.use(express.static("client/build"));
+// }
+app.use(function(req, res, next){
+  console.log("Request from: ", req.url);
+  next();
+})
 
 // gs://runeskype-111.appspot.com
 

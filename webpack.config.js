@@ -8,11 +8,11 @@ var configFunc = function(){
     var config = {
         devtool: "source-map",
         entry: [
-            __dirname + "/app/app.js"
+            __dirname + "/client/src/index.js"
         ],
         output: {
-            path: __dirname + "/dist",
-            filename: "bundle.js",
+            path: __dirname + "/client/build/static/js/",
+            filename: "main.00078c37.js",
             publicPath: "/"
         },
         module: {
@@ -38,7 +38,7 @@ var configFunc = function(){
         plugins: [
             new HtmlWebpackPlugin({
                 hash: true,
-                template: path.join(__dirname , "/app/index.html"),
+                template: path.join(__dirname , "/client/src/index.html"),
                 inject: "body"
             }),
             new webpack.BannerPlugin("React Twilio"),
