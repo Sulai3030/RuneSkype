@@ -18,7 +18,7 @@ class SpriteUpload extends Component {
       }
       
 
-      urlSubmit(event) {
+      SPurlSubmit(event) {
           event.preventDefault()
           $('.dot').css('background-image', 'url(' + this.state.url + ')')
           let spriteUrl = this.state.url;
@@ -47,9 +47,9 @@ class SpriteUpload extends Component {
          value={this.state.url}
          onClick={this.forceStop.bind(this)}
          onChange={this.handleChange.bind(this)}
-         onSubmit={this.urlSubmit.bind(this)}
+         
          />
-         <button onClick={this.urlSubmit.bind(this)} className='btn btn-danger'>Submit</button>
+         <button onClick={this.SPurlSubmit.bind(this)}  className='btn btn-danger'>Submit</button>
          </span>
      </div>
     );

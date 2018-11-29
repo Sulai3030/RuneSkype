@@ -18,7 +18,7 @@ class MapUpload extends Component {
       }
       
 
-      urlSubmit(event) {
+      MPurlSubmit(event) {
         event.preventDefault()
           $('#mapdiv').css('background-image', 'url(' + this.state.url + ')')
           let mapUrl = this.state.url;
@@ -48,9 +48,9 @@ class MapUpload extends Component {
          value={this.state.url}
          onClick={this.forceStop.bind(this)}
          onChange={this.handleChange.bind(this)}
-         onSubmit={this.urlSubmit.bind(this)}
+         
          />
-         <button onClick={this.urlSubmit.bind(this)} className='btn btn-danger'>Submit</button>
+         <button onClick={this.MPurlSubmit.bind(this)} className='btn btn-danger'>Submit</button>
          </span>
      </div>
     );

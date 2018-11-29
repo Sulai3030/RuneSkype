@@ -18,7 +18,7 @@ class BackgroundUpload extends Component {
       }
       
 
-      urlSubmit(event) {
+      BGurlSubmit(event) {
         event.preventDefault()
           $('body').css('background-image', 'url(' + this.state.url + ')')
           let bgUrl = this.state.url;
@@ -47,9 +47,9 @@ class BackgroundUpload extends Component {
          value={this.state.url}
          onClick={this.forceStop.bind(this)}
          onChange={this.handleChange.bind(this)}
-         onSubmit={this.urlSubmit.bind(this)}
+         
          />
-         <button onClick={this.urlSubmit.bind(this)} className='btn btn-danger'>Submit</button>
+         <button onClick={this.BGurlSubmit.bind(this)}  className='btn btn-danger'>Submit</button>
          </span>
      </div>
     );

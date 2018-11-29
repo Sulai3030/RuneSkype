@@ -85,15 +85,19 @@ let sid = process.env.API_SID
 let secret = process.env.API_SECRET
 
 
-const mm = mongoose.connect(process.env.MONGODB_URI || "mongodb://testaccount:fakepassword1@ds241493.mlab.com:41493/deploytest", { useNewUrlParser : true});
-
-
 let Item = new Schema(
   { img: 
       {name: String, url: String, contentType: String }
   }
 );
 Item = mongoose.model('Images', Item);
+
+
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://testaccount:fakepassword1@ds241493.mlab.com:41493/deploytest", { useNewUrlParser : true});
+let db = mongoose.connection;
+db.once('open', function() { console.log('Successfully connected');});
+db.on('error', console.error.bind(console, 'conn error:'));
 // Define API routes here
 
 // app.post('/image-upload/', (req, res) => {
