@@ -354,7 +354,7 @@ render( ) {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="index.html">SB Admin v2.0</a>
+              <a className="navbar-brand" href="index.html">RuneSkype</a>
           </div>
           {/* <!-- /.navbar-header --> */}
 
