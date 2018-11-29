@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import $ from 'jquery'
-import Axios from 'axios';
+import axios from 'axios';
 
 
 
@@ -21,9 +21,15 @@ class SpriteUpload extends Component {
       urlSubmit(event) {
           event.preventDefault()
           $('.dot').css('background-image', 'url(' + this.state.url + ')')
-          let url = this.state.url;
+          let spriteUrl = this.state.url;
           setTimeout(() => {
-            Axios.post('/api/map', url)
+            axios.post('/api/sprite', spriteUrl)
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
           }, 1000)
           this.setState({
             url : ''

@@ -7,17 +7,17 @@ const faker = require("faker");
 const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
 // const admin = require('firebase-admin');
-const {Storage} = require('@google-cloud/storage');
-const fs = require('fs');
+const axios = require('axios')
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const multer = require('multer');
 
 
 
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.get('env')
+
 
 
 

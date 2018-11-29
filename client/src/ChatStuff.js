@@ -6,7 +6,7 @@ export default class ChatStuff extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: 'Sebastian',
+      userName:  null,
       message: '',
       list: [],
     };
