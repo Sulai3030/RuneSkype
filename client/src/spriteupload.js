@@ -23,7 +23,7 @@ class SpriteUpload extends Component {
           $('.dot').css('background-image', 'url(' + this.state.url + ')')
           let spriteUrl = this.state.url;
           setTimeout(() => {
-            axios.post('/api/sprite', spriteUrl)
+            axios.get('/api/sprite', spriteUrl)
               .then(function (response) {
                 console.log(response);
               })
