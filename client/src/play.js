@@ -179,6 +179,79 @@ class Play extends Component {
                 }
             }
         })();
+            /*----------------------------------------------------*/
+        /*  Remove # tags from URL
+         /*----------------------------------------------------*/
+        // $(window).on('hashchange', function (e) {
+        //     history.replaceState("", document.title, e.originalEvent.oldURL);
+        // });
+    
+        /**
+         * Vertically center Bootstrap 3 modals so they aren't always stuck at the top
+         */
+        $(function () {
+            function reposition() {
+                var modal = $(this),
+                    dialog = modal.find('.modal-dialog');
+                modal.css('display', 'block');
+    
+                // Dividing by two centers the modal exactly, but dividing by three
+                // or four works better for larger screens.
+                dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+            }
+    
+            // Reposition when a modal is shown
+            $('.modal').on('show.bs.modal', reposition);
+            // Reposition when the window is resized
+            $(window).on('resize', function () {
+                $('.modal:visible').each(reposition);
+            });
+        });
+    
+    
+        /*----------------------------------------------------*/
+        /*	Scroll To Top Section
+         /*----------------------------------------------------*/
+    
+        $(window).on('scroll', function() {
+            var windowH = $(window).width();
+            if ($(this).scrollTop() > 100 && windowH > 767) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+    
+        $('.scrollup').on('click', function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+    
+    
+        /*----------------------------------------------------*/
+        /*	Lead Gen Character Left Plugin
+         /*----------------------------------------------------*/
+    
+        $('#characterLeft').text('140 characters left');
+        $('#mc_message').keydown(function () {
+            var max = 140;
+            var len = $(this).val().length;
+            if (len >= max) {
+                $('#characterLeft').text('Character limit reached');
+                $('#characterLeft').addClass('red');
+                $('#btnSubmit').addClass('disabled');
+            }
+            else {
+                var ch = max - len;
+                $('#characterLeft').text(ch + ' characters left');
+                $('#btnSubmit').removeClass('disabled');
+                $('#characterLeft').removeClass('red');
+            }
+        });
+    
+    
     
     }
     state = {
