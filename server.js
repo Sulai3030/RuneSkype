@@ -118,7 +118,16 @@ app.post('/image-upload/', (req, res) => {
 
 
  app.post('/api/photo/',function(req,res){
-  var newItem = new Item();
+  let newItem = new Item();
+  newItem.img.data = req.body
+  newItem.img.contentType = 'image/*';
+  newItem.save();
+ });
+
+ app.post('/api/canvas/',function(req,res){
+   console.log(req);
+   console.log(req.body)
+  let newItem = new Item();
   newItem.img.data = req.body
   newItem.img.contentType = 'image/*';
   newItem.save();

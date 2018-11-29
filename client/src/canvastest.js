@@ -6,6 +6,7 @@ import Icon from './icon'
 import Message from './Message';
 import firebase from 'firebase';
 import $ from 'jquery'
+import Axios from 'axios'
 
 
 
@@ -29,14 +30,12 @@ MapRender = () => {
         let currentCanvas = canvas
         document.querySelector('.otherbox').innerHTML = '';
         document.querySelector('.otherbox').appendChild(canvas)
+
+        setTimeout(() => {
+            let canvasMaster = document.querySelector('.otherbox').innerHTML
+            Axios.post('/api/canvas', canvasMaster);
+        }, 1200);
         
-        let element = $("canvas");
-        let jsonObject = {};
-        jsonObject.id = element.id;
-        jsonObject.innerHTML = element.innerHTML;
-        let jsonString = JSON.stringify(jsonObject); // this is json for your div. 
-        this.handleSend(jsonObject)
-        this.handleSend(jsonString)
       });
 
 
