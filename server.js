@@ -117,7 +117,7 @@ app.post('/image-upload/', (req, res) => {
 
 
 
- app.post('/api/photo',function(req,res){
+ app.post('/api/photo/',function(req,res){
   var newItem = new Item();
   newItem.img.data = req.body
   newItem.img.contentType = 'image/*';

@@ -15,7 +15,7 @@ class DefaultUpload extends Component {
           const reader = new FileReader();
           reader.onload = () => {
               const fileAsBinaryString = reader.result;
-              axios.post('/api/upload', fileAsBinaryString)
+              axios.post('/api/photo', fileAsBinaryString)
           };
           reader.onabort = () => console.log('file reading was aborted');
           reader.onerror = () => console.log('file reading has failed');
