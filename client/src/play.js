@@ -381,7 +381,7 @@ render( ) {
                   </div>
               </div> */}
               {/* <!-- /.col-lg-4 --> */}
-              <div className="col-lg-6">
+              <div className="col-lg-7">
                   <div className="panel panel-primary">
 
                       <div className="panel-body map-panel">
@@ -390,7 +390,7 @@ render( ) {
                   </div>
               </div>
               {/* <!-- /.col-lg-4 --> */}
-              <div className="col-lg-6">
+              <div className="col-lg-5">
                 <VideoComponent />
               </div>
               {/* <!-- /.col-lg-4 --> */}

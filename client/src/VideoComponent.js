@@ -171,7 +171,7 @@ export default class VideoComponent extends Component {
 
 
 			<div className="panel panel-success">
-			<div className="panel-heading">
+			<div className="panel-heading video-heading-panel">
 			<span className="flex-item join-leave-input">
 							<input
 								type = 'text'
