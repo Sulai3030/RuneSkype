@@ -19,12 +19,7 @@ const multer = require('multer');
 
 app.get('env')
 
-let Item = new Schema(
-  { img: 
-      {name: String, url: String, contentType: String }
-  }
-);
-Item = mongoose.model('Images', Item);
+
 
 
 // gs://runeskype-111.appspot.com
@@ -41,13 +36,13 @@ Item = mongoose.model('Images', Item);
 
 
 
-  const bucketName = 'images-111'
-  const keyfile = JSON.parse(process.env.GCLOUD)
+  // const bucketName = 'images-111'
+  // const keyfile = JSON.parse(process.env.GCLOUD)
  
-  const storage = new Storage({
-    projectId: "runeskype-1111",
-    keyFilename: keyfile
-  });
+  // const storage = new Storage({
+  //   projectId: "runeskype-1111",
+  //   keyFilename: keyfile
+  // });
 
 
 
@@ -93,45 +88,50 @@ let secret = process.env.API_SECRET
 const mm = mongoose.connect(process.env.MONGODB_URI || "mongodb://testaccount:fakepassword1@ds241493.mlab.com:41493/deploytest", { useNewUrlParser : true});
 
 
-
+let Item = new Schema(
+  { img: 
+      {name: String, url: String, contentType: String }
+  }
+);
+Item = mongoose.model('Images', Item);
 // Define API routes here
 
-app.post('/image-upload/', (req, res) => {
-  console.log('works!')
-  console.log(req.file)
-  const imageToUpload = req.value;
+// app.post('/image-upload/', (req, res) => {
+//   console.log('works!')
+//   console.log(req.file)
+//   const imageToUpload = req.value;
 
  
-  let bucket = storage.bucket(bucketName);
-  let localFilename = imageToUpload;
+//   let bucket = storage.bucket(bucketName);
+//   let localFilename = imageToUpload;
 
-  bucket.upload(localFilename, function(err, file) {
-    if (!err) {
-      console.log('somefile-inThisCaseASong.mp3 is now in your bucket.');
-    } else {
-      console.log('Error uploading file: ' + err);
-    }
+//   bucket.upload(localFilename, function(err, file) {
+//     if (!err) {
+//       console.log('somefile-inThisCaseASong.mp3 is now in your bucket.');
+//     } else {
+//       console.log('Error uploading file: ' + err);
+//     }
 
-})
-});
+// })
+// });
 
 
 
- app.post('/api/photo/',function(req,res){
-  let newItem = new Item();
-  newItem.img.data = req.body.fileAsBinaryString
-  newItem.img.contentType = 'image/*';
-  newItem.save();
- });
+//  app.post('/api/photo/',function(req,res){
+//   let newItem = new Item();
+//   newItem.img.data = req.body.fileAsBinaryString
+//   newItem.img.contentType = 'image/*';
+//   newItem.save();
+//  });
 
- app.post('/api/canvas/',function(req,res){
-   console.log(req);
-   console.log(req.body)
-  let newItem = new Item();
-  newItem.img.data = req.body.canvasMaster
-  newItem.img.contentType = 'image/*';
-  newItem.save();
- });
+//  app.post('/api/canvas/',function(req,res){
+//    console.log(req);
+//    console.log(req.body)
+//   let newItem = new Item();
+//   newItem.img.data = req.body.canvasMaster
+//   newItem.img.contentType = 'image/*';
+//   newItem.save();
+//  });
 
  app.post('/api/background/',function(req,res){
   let newItem = new Item();

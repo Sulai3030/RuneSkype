@@ -8,6 +8,8 @@ import FileUpload from './uploadtest';
 import Chat from './Chat'
 import CanvasTest from './canvastest'
 import TextUpload from './textupload'
+import DM from './DMplay'
+import Player from './Playerplay'
 
 
 
@@ -25,6 +27,8 @@ class App extends Component {
             <Route exact path ='/chat' component={Chat} />
             <Route exact path ='/canvastest' component={CanvasTest} />
             <Route exact path ='./textupload' component={TextUpload} />
+            <Route exact path ='/dm' component={DM} />
+            <Route exact path ='./player' component={Player} />
           </div>
         </Router>
     
