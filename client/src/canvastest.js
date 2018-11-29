@@ -19,9 +19,20 @@ export default class CanvasTest extends Component {
         this.state = {
           userName: 'Player',
           message: '',
+          url : ''
         }
-        this.messageRef = firebase.database().ref().child('messages');
-        this.listenMessages();
+
+    }
+
+ 
+
+  handleChange(event) {
+      this.setState({url: event.target.value});
+    }
+    
+
+    urlSubmit(event) {
+        $('body').css('background-image', 'url(' + this.state.url + ')')
     }
 
 MapRender = () => {
@@ -31,47 +42,9 @@ MapRender = () => {
         document.querySelector('.otherbox').innerHTML = '';
         document.querySelector('.otherbox').appendChild(canvas)
 
-        setTimeout(() => {
-            let canvasMaster = document.querySelector('.otherbox').innerHTML
-            Axios.post('/api/canvas', canvasMaster);
-        }, 1200);
         
       });
-
-
-
-
-    
-}
-
-componentWillReceiveProps(nextProps) {
-    if(nextProps.user) {
-      this.setState({'userName': nextProps.user.displayName});
     }
-  }
-  listenMessages() {
-    this.messageRef
-      .limitToLast(10)
-      .on('value', message => {
-        this.setState({
-          list: Object.values(message.val()),
-        });
-      });
-  }
-
-  handleSend(jsonObject) {
-      
-
-      let newItem = {
-        userName: this.state.userName,
-        message: jsonObject,
-      }
-      this.messageRef.push(newItem);
-      
-
-    
-  }
-
 
 // IconRender = () => {
 
@@ -129,6 +102,19 @@ componentWillReceiveProps(nextProps) {
                   </div>
               </div>
               </div>
+              <div className='row'>
+     <div className = ' col-lg-6 testrow'>
+         <input
+         
+         type='text'
+         placeholder="Link Image URL"
+         value={this.state.url}
+         onChange={this.handleChange.bind(this)}
+         onSubmit={this.urlSubmit.bind(this)}
+         />
+         <button onClick={this.urlSubmit.bind(this)} className='btn btn-danger'>Submit</button>
+         </div>
+     </div>
               </div>
 
        )

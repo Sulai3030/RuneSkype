@@ -10,6 +10,9 @@ import './play.css';
 import Chat from './Chat'
 import ChatStuff from './ChatStuff'
 import DiceComponent from './dicecomponent';
+import BackgroundUpload from './textupload'
+import MapUpload from './mapuploader'
+import SpriteUpload from './spriteupload'
 
 class Play extends Component {
 
@@ -19,6 +22,7 @@ class Play extends Component {
     }
 
    
+
 
     handleInputChange = event => {
 
@@ -241,8 +245,7 @@ render( ) {
                       <li>
                           <a href="">
                               <div>
-                                  <i className="fa fa-comment fa-fw"></i> New Comment
-                                  <span className="pull-right text-muted small">4 minutes ago</span>
+                                <BackgroundUpload />
                               </div>
                           </a>
                       </li>
@@ -250,8 +253,7 @@ render( ) {
                       <li>
                           <a href="">
                               <div>
-                                  <i className="fa fa-twitter fa-fw"></i> 3 New Followers
-                                  <span className="pull-right text-muted small">12 minutes ago</span>
+                                  <MapUpload />
                               </div>
                           </a>
                       </li>
@@ -259,8 +261,7 @@ render( ) {
                       <li>
                           <a href="">
                               <div>
-                                  <i className="fa fa-envelope fa-fw"></i> Message Sent
-                                  <span className="pull-right text-muted small">4 minutes ago</span>
+                                 <SpriteUpload />
                               </div>
                           </a>
                       </li>

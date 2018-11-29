@@ -21,7 +21,7 @@ app.get('env')
 
 let Item = new Schema(
   { img: 
-      {data: String, contentType: String }
+      {name: String, url: String, contentType: String }
   }
 );
 Item = mongoose.model('Images', Item);
@@ -130,6 +130,30 @@ app.post('/image-upload/', (req, res) => {
   let newItem = new Item();
   newItem.img.data = req.body.canvasMaster
   newItem.img.contentType = 'image/*';
+  newItem.save();
+ });
+
+ app.post('/api/background/',function(req,res){
+  let newItem = new Item();
+  newItem.img.name = 'background'
+  newItem.img.data = req.body.url
+  newItem.img.contentType = 'url';
+  newItem.save();
+ });
+
+ app.post('/api/sprite/',function(req,res){
+  let newItem = new Item();
+  newItem.img.name = 'sprite'
+  newItem.img.data = req.body.url
+  newItem.img.contentType = 'url';
+  newItem.save();
+ });
+
+ app.post('/api/map/',function(req,res){
+  let newItem = new Item();
+  newItem.img.name = 'map'
+  newItem.img.data = req.body.url
+  newItem.img.contentType = 'url';
   newItem.save();
  });
 

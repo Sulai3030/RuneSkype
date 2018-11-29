@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 import FileUpload from './uploadtest';
 import Chat from './Chat'
 import CanvasTest from './canvastest'
+import TextUpload from './textupload'
 
 
 
@@ -23,7 +24,7 @@ class App extends Component {
             <Route exact path ='/uploadtest' component={FileUpload} />
             <Route exact path ='/chat' component={Chat} />
             <Route exact path ='/canvastest' component={CanvasTest} />
-            
+            <Route exact path ='./textupload' component={TextUpload} />
           </div>
         </Router>
     

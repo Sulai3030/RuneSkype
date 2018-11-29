@@ -1,9 +1,34 @@
 #mapdiv {
-    height: 2200px;
+    height: 1200px;
     width: 1800px;
     background-image: url('/resources/hex.png');
-    background-size: contain;
     background-repeat: no-repeat;
+}
+
+.mapcontrols {
+    position: absolute;
+    width: 35px;
+    height: 65px;
+    right: 30px;
+    bottom: 5px;
+    background-image: url('/resources/arrows.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 10;
+}
+
+.up {
+    position: absolute;
+    top: 0;
+    height: 32px;
+    width: 100%;
+}
+
+.down {
+    position: absolute;
+    bottom: 0;
+    height: 32px;
+    width: 100%;
 }
 
 
@@ -21,8 +46,8 @@
     }
 
     #LI_1 {
-        width: 15px;
-        height: 15px;
+        width: 35px;
+        height: 35px;
         background-image: url('circle.png');
         background-size: contain;
         background-color: rgba(0, 0, 0, 0);
